@@ -2,8 +2,8 @@
 AJAX, Webstorage, cookies
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/04/index.html#/)
-- [Inspelning](https://youtu.be/rGm3BFYs-tY) 2015-11-23, 13-15 (Youtube)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/03-ajax/index.html)
+- [Recording](https://youtu.be/rGm3BFYs-tY) 2015-11-23, 13-15 (Youtube, Swedish)
 
 ### Eloquent JavaScript, 2nd Edition 
 

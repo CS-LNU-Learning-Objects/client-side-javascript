@@ -2,8 +2,8 @@
 The Browser, rendering engine, browser enginge, javascript engine, javascript and the browser, the script tag, developer tools, sandboxing, polution, browserify
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/02/index.html#/)
-- [Inspelning](https://youtu.be/Va6L8-ao36g) 2015-11-09, 13-15 (Youtube)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/01-browser/index.html#/)
+- [Recording](https://youtu.be/Va6L8-ao36g) 2015-11-09, 13-15 (Youtube, Swedish)
 
 ### Eloquent JavaScript, 2nd Edition 
 

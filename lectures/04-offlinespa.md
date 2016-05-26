@@ -1,20 +1,19 @@
 ## Keywords
-Accessibility, optimization
+Single Page Applications, History API, Websockets, Offline first, Application cache, Service Workers
+
+## Resources
+- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/05/index.html#/)
+- [Inspelning](https://youtu.be/cyX3NKQZMR0) 2015-12-14, 13-15 (Youtube)
+
 
 ## Mandantory resources 
-### Accessibility:
-1. Tillgänglighet kopplat till html och css. Jag ser detta som en lämplig introduktion till tillgänglighet om du inte tittat på detta tidigare.
-[Föreläsning från HT14](https://youtu.be/PKkUEDgHRJ8?t=58m52s)
-2. Föreläsning från föregångaren till denna kurs som behandlar tillgänglighet och säkerhet. Det är bara första delen som är obligatorisk. Del 2 kommer via att behandla senare. [Föreläsning från HT14](https://youtu.be/waOIdyty-Hc?t=2m40s)
+1. Read: [Promises (Skip "Bonus round: Promises and Generators")](http://www.html5rocks.com/en/tutorials/es6/promises/)
+2. Watch: [Autocomplete + Promises extendet demo](https://youtu.be/K_elRJIJPqw)
+3. Watch: [Three Keys to Successful Single Page Web Applications](https://youtu.be/46Bu9ms9mBg)
+4. Watch: [Christine Spang - WebSockets from the Wire Up - PyCon 2015](https://youtu.be/u5QT3luWx7w)
+5. Watch: [Javascript Offline First - Leeds JS Talk](https://youtu.be/PEHGSiC9_ck)
 
-### Optimization:
-1. Javascript language optimization[Franziska Hinkelmann - A Trip to the Zoo](https://www.youtube.com/watch?v=1kAkGWJZ6Zo)
-2. [Jake Archibald - Modern progressive enhancement](https://www.youtube.com/watch?v=EVEiIlJSx_Y)
-
-Webbapplication optimization:
-You should read up on the topics below so you get a basic understanding of the tequniques and how they can be applied.
-* Fewer http Request
-  * CSS Sprites [CSS Sprites: What They Are, Why They’re Cool, and How To Use Them](https://css-tricks.com/css-sprites/)
-* CDN - What is a CDN?
-  * [Why use a CDN](http://www.sitepoint.com/7-reasons-to-use-a-cdn/)
-  * [Why not to use a CDN](http://www.sitepoint.com/7-reasons-not-to-use-a-cdn/)
+## Optional resources
+* [Offline First](http://alistapart.com/article/offline-first)
+* [Application cache is a douchebag](http://alistapart.com/article/application-cache-is-a-douchebag)
+* [An introduction to Service Workers](http://www.html5rocks.com/en/tutorials/service-worker/introduction/)

@@ -1,3 +1,4 @@
+## Goal
 After performing this assignment you will fulfill the three goals described in the course syllabus:
 
 * Analyze problems and then to evaluate and choose appropriate design and construct the solution in the form of programs in the programming language JavaScript.
@@ -13,22 +14,23 @@ This examination will focus on asynchronous communication agains an external [RE
 The backend (server-side code) of this assignment will be given and your job is to write the client-side code.
 
 ## Preperation
-Do the excercises at A and B level. (at least)
-Read the chapters in the book for this part.
-Use Git to clone down your examination-repo. It should be something like
-```
-git clone https://github.com/[COURSECODE]/[USERNAME]]-examination-2.git
-```
-Pull down the files from our examination repo (be sure to do this in the right directory)
-```
-git pull https://github.com/[COURSECODE]/examination-2.git
-```
-This repo should include a VagrantFile with the same stuff that you have been using in the exercises.
-Then start writing your code in this repo and do your commits as usually.
+1. Do the excercises at A and B level. (at least)
+2. Read the chapters in the book for this part.
+3. Make sure Virtual Box and Vagrant are installed on your computer.
+4. Use Git to clone down your examination-repo. It should be something like
+  ```
+     git clone https://github.com/[COURSECODE]/[USERNAME]-examination-2.git
+  ```
+5. Pull down the files from our examination repo (be sure to do this in the right directory)
+  ```
+     git pull https://github.com/[COURSECODE]/examination-2.git
+  ```
+  This repo should include a VagrantFile with the same stuff that you have been using in the exercises.
+
+6. Start writing your code in this repo and do your commits as usually.
 
 ##Notice
 Any attempt to plagiarism or other way of cheating will be reported to the university discipline board
-
 
 ## About the assignment
 You should create an client application in which the user can answer, by the server given, quiz-questions. The user must do this in a certain time. If the user gives the correct answer, the application will take the user to the next question. If the user give the wrong answer or didn´t in time the quiz is over.

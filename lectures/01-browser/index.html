@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>02 - Lecture - Client-based web programming (1DV022)</title>
+    <title>Lecture - The Browser</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -43,9 +43,8 @@
         <div class="slides">
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
-                <h3>Client-based Web Programming</h3>
-                <h3>(1DV022)</h3>
-                <h1>Lecture 02</h1>
+                <h3>The Browser</h3>
+                <h1>Lecture</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -58,7 +57,7 @@
                 <p>
                     This work is produced by Johan Leitet for the course Client-based Web Programming (1DV022) at Linnaeus University.
                 </p>
-                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a 
+                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Creative Commons Attribution 4.0 International License</a>.</p>
                 <h4>You are free to </h4>
                 <ul>
@@ -87,18 +86,18 @@
                       * Compatibility
                       * Internals
                       * Devtools
-                    * JavaScript in the browser 
+                    * JavaScript in the browser
                       * Where to load scripts
                       * Sandboxing
                       * Polution
                       * "Browserify"
                 </script>
-                <pre><code></code></pre> 
+                <pre><code></code></pre>
             </section>
-              
+
         <!-- The browser -->
         <section>
-            
+
             <!-- Crockford quote -->
             <section>
                 <blockquote>"The browser is a really hostile programming environment." <br><br>-- <a href="https://youtu.be/v2ifWcnQs6M">Douglas Crockford,<br>The JavaScript Programming Language</a></blockquote>
@@ -110,27 +109,27 @@
                 <br>
                 <div style="text-align:center;">
                 <img style="padding-right:25%;" src="../images/servers.png" />
-                
+
                 <img style="padding-left:25%"  src="../images/browsers18.png" />
                 </div>
                 <br><br><br><br><br>
                 <p class="lnu source">Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed under <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></p>
             </section>
-       
+
            <!-- Browzers -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## Browsers
 
-                |         | Usage world wide           | Usage Sweden  | 
+                |         | Usage world wide           | Usage Sweden  |
                 | ------------- |:-------------:| :-----:|
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome-android/chrome-android_64x64.png)      | 54% (34%) | 45% (32%) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | 16% (2%)      |    17% (-) | 
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | 16% (-)      |   14% (-) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | 9% (21%)      |    20% (60%) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png) | 2% (11%)     |    - (-) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_64x64.png) | - (-)     |    - (-) |
-                
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome-android/chrome-android_64x64.png)      | 58% (37%) | 48% (28%) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | 10% (2%)      |    13% (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | 14% (-)      |   12% (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | 10% (23%)      |    19% (56%) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png) | 2% (9%)     |    - (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_64x64.png) | - (-)     |    5% (-) |
+
                 <p class="lnu source">http://gs.statcounter.com/</p>
                 </script>
             </section>
@@ -148,10 +147,10 @@
 
                 </script>
             </section>
-        
+
         </section>
 
-       
+
 
         <!-- Browser components Main Section -->
         <section>
@@ -177,7 +176,7 @@
 
                 </script>
             </section>
-            
+
             <!-- Browser flow 1 -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -187,7 +186,7 @@
 
                 </script>
             </section>
-            
+
             <!-- Browser flow -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -204,23 +203,23 @@
                 <script type="text/template">
                 <br>
 
-                |         | Browser/<br>rendering Engine           | JavaScript<br>Engine  | 
+                |         | Browser/<br>rendering Engine           | JavaScript<br>Engine  |
                 | ------------- |:-------------:| :-----:|
                 | <div>![](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome-android/chrome-android_64x64.png) ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png)</div>     | Blink | V8 |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | Trident      |    Chakra | 
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | Trident      |    Chakra |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | Gecko      |   SpiderMonkey |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | WebKit     |    Nitro |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_64x64.png) | EdgeHTML     |    Chakra (fork) |
-               
+
                 </script>
             </section>
 
 
 
         </section>
-        
+
         <!-- Javascript and the browser -->
-        <section>       
+        <section>
             <!-- Sandboxing -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -236,7 +235,7 @@
 
 
                 </script>
-            </section>  
+            </section>
 
             <!-- Seperation of concern -->
             <section class="noborderimages" data-markdown>
@@ -245,14 +244,14 @@
 
                     Seperation of concerns (SoC)<br><br>
 
-                    |         |            |   | 
+                    |         |            |   |
                     | :-------------: |:-------------:| :-----:|
                     | ![](../images/html64p.png) | .html | Structure |
-                    | ![](../images/css64g.png) | .css      |    Presentation | 
+                    | ![](../images/css64g.png) | .css      |    Presentation |
                     | ![](../images/js64y.png)    | .js | Behavior |
                 </script>
             </section>
-            
+
             <!-- Sandboxing -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -265,7 +264,7 @@
                     * Communicate with third party servers
                       * CORS (Cross Origin Resouce Sharing) solves this
                     * Find out the (correct) color of a <a href="http://www.sunet.se" id="theLink">link...</a>
-                    
+
                 </script>
                     <!-- var l = document.getElementById("theLink");
                         window.getComputedStyle(l).color; -->
@@ -305,7 +304,7 @@
 
       </code></pre>
             </section>
-            
+
             <!-- JS in the Browser -->
             <section>
                     <h2>JS in the Browser</h2>
@@ -321,7 +320,7 @@
     &lt;script&gt;
       console.log("Testing out js in the browser");
     &lt;/script&gt;
-    
+
     &lt;section&gt;
         ... A lot of content here ...
     &lt;/section&gt;
@@ -329,7 +328,7 @@
 </pre></code>
             </section>
 
-        
+
            <!-- Async, Defer - Remove? -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -346,7 +345,7 @@
                 </script>
             </section>
 
-            
+
             <!-- Folder structure -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -359,7 +358,7 @@
                          |-source/
                                 |-js/
                                    |-app.js
-                                |-scss/
+                                |-css/
                                 |-index.html
                          |-debug/
                                |-javascript/
@@ -405,7 +404,7 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                     ##"Browserify" to the rescue
-                    
+
                     We can use node-modules in the browser!
 
                     <p clasS="lnu source">client/source/js/app.js</p>
@@ -416,7 +415,7 @@
 
                     console.log(stats.max);
                     ```
-                    
+
                     <p clasS="lnu source">client/source/js/statistics.js</p>
                     ```
                     exports.analyze = function(data) {
@@ -440,7 +439,7 @@
 
                 <p clasS="lnu source">Terminal:</p>
                 ```
-                   browserify source/js/app.js > dist/javascript/bundle.js
+                   browserify source/js/app.js > dist/javascript/build.js
                 ```
 
                 </script>
@@ -455,7 +454,7 @@
 
                 <p clasS="lnu source">Terminal:</p>
                 ```
-                   browserify source/js/app.js > debug/javascript/bundle.js --debug
+                   browserify source/js/app.js > debug/javascript/build.js --debug
                 ```
 
                 ![](../images/browserify_client.png)<br>
@@ -466,12 +465,12 @@
             </section>
 
         </section>
-          
+
             <!-- Developer tools -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## Developer tools in the browser
-                
+
                 * Inspect the document
                  * Edit html/css
                 * Watch network traffic

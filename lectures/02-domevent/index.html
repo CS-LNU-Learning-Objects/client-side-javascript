@@ -58,7 +58,7 @@
                 <p>
                     This work is produced by Johan Leitet for the course Client-based Web Programming (1DV022) at Linnaeus University.
                 </p>
-                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a 
+                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Creative Commons Attribution 4.0 International License</a>.</p>
                 <h4>You are free to </h4>
                 <ul>
@@ -81,12 +81,12 @@
                 <script type="text/template">
                 ## Content
 
-                * DOM 
+                * DOM
                   * Traversing
                   * Selecting
                   * Manipulating
                   * Templates
-                * Event 
+                * Event
                   * How not to - How to
                   * Event delegation
                   * Timers
@@ -94,13 +94,13 @@
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
             </section>
-            
+
         <!-- DOM -->
         <section>
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## The DOM
-                
+
                 Document object model
                 ![](https://docs.google.com/drawings/d/1Oz05zW7ZsDlNeKFBgjIXnq41G773_pNXB_kd6nodRTM/pub?w=503&h=625) <!-- .element style="float:left" -->
 
@@ -125,17 +125,17 @@
                 <script type="text/template">
                 ## Nodetypes
 
-                |         | Name           | Value  | 
+                |         | Name           | Value  |
                 | :-------------: |:-------------:| :-----:|
                 | <span style="border: 6px solid yellow; padding: 0 50px; border-radius:10px">H1</span>      | ELEMENT_NODE | 1 |
-                | <span style="border: 6px solid blue; padding: 0 50px; border-radius:10px">#text</span> | TEXT_NODE     |   3 | 
+                | <span style="border: 6px solid blue; padding: 0 50px; border-radius:10px">#text</span> | TEXT_NODE     |   3 |
                 | <span style="border: 6px solid green; padding: 0 50px; border-radius:10px">#comment</span> | COMMENT_NODE    |   8 |
                 | <span style="border: 6px solid purple; padding: 0 50px; border-radius:10px">#document</span> | DOCUMENT_NODE    |   9 |
                 | ... | ...    |   ... |
 
                 </script>
             </section>
-            
+
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## \n
@@ -173,21 +173,21 @@
 	            <script type="text/template">
                     ##Selecting nodes
 
-                    |         | Parameter (ex)        | Returns  | 
+                    |         | Parameter (ex)        | Returns  |
                     | :-------------: |:-------------:| :-----:|
                     | getElementById      | id    |  Node-element|
-                    | getElementsByTagName| tag      |   Node-list| 
-                    | getElementsByClassName| class  |   Node-list| 
+                    | getElementsByTagName| tag      |   Node-list|
+                    | getElementsByClassName| class  |   Node-list|
 
 
 
                     ```javascript
-                    var mainDiv = document.getElementById("main");
+                    let mainDiv = document.getElementById('main');
 
-                    var pTags = document.getElementByTagName("p");
+                    let pTags = document.getElementByTagName('p');
                     console.log(pTags.length);
 
-                    var tags = document.getElementByClassName("post");
+                    let tags = document.getElementByClassName('post');
                     console.log(tags.length);
                     ```
 
@@ -196,7 +196,7 @@
 
 	        <section id="selectorsAPI" class="noborderimages" data-markdown>
                 <script type="text/template">
-                ##Selectors API 
+                ##Selectors API
                 - One API to rule them all
 
 
@@ -204,14 +204,14 @@
                 |:----------------- |:-------------:|
                 | querySelector     |  Node-element |
                 | querySelectorAll  |   Node-list   |
-                
+
 
                 ```
-                var mainDiv = document.querySelector("#main");
+                let mainDiv = document.querySelector('#main');
 
-                var pTags = document.querySelectorAll("p");
+                let pTags = document.querySelectorAll('p');
 
-                var tags = document.querySelectorAll("p.tag");
+                let tags = document.querySelectorAll('p.tag');
                 ```
 
 	            </script>
@@ -258,7 +258,7 @@
                     * Removing nodes
                       * node.removeChild(oldNode)
                     * Making clones
-                      * node.cloneNode(bool) 
+                      * node.cloneNode(bool)
                         * true makes a deep copy
 
                 </script>
@@ -273,12 +273,12 @@
                     * document.createTextNode - Create a new <span style="border: 3px solid blue">TEXT_NODE</span>
 
                     ```javascript
-                    var newTag = document.createElement("p");
-                    var newText = document.createTextNode("Cool text!");
+                    let newTag = document.createElement('p');
+                    let newText = document.createTextNode('Cool text!');
 
                     newTag.appendChild(newText);
 
-                    document.querySelector("#main").appendChild(newTag);
+                    document.querySelector('#main').appendChild(newTag);
 
                     ```
                 </script>
@@ -295,39 +295,39 @@
                       * Removes all children from element
 
                     ```javascript
-                        element.textContent = "Text...";
+                        element.textContent = 'Text...';
                     ```
 
                     * innerHTML
                       * Parses the string
-                      * Creates elements and text nodes 
+                      * Creates elements and text nodes
                       * Removes all children from element
                       * Less secure. Use textContent!
-                       
+
                     ```javascript
-                        element.innerHTML = "<p>Some text</p>";
+                        element.innerHTML = '<p>Some text</p>';
                     ```
 
-                    
+
                 </script>
             </section>
 
              <section class="noborderimages" data-markdown>
                 <script type="text/template">
                     ## Attributes
-                    
-                    * getAttribute("attribute name")
-                    * setAttribute("attribute name", value)
-                    * removeAttribute("attribute name")
+
+                    * getAttribute('attribute name')
+                    * setAttribute('attribute name', value)
+                    * removeAttribute('attribute name')
 
                     ```javascript
-                    var newTag = document.createElement("img");
-                    
-                    newTag.setAttribute("src", "image/picture.svg");
+                    let newTag = document.createElement('img');
 
-                    // The browser fetches and caches the "picture.svg"
+                    newTag.setAttribute('src', 'image/picture.svg');
 
-                    document.querySelector("#main").appendChild(newTag);
+                    // The browser fetches and caches the 'picture.svg'
+
+                    document.querySelector('#main').appendChild(newTag);
 
                     ```
                 </script>
@@ -336,17 +336,17 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                     ## Styles
-                    
-                    ```javascript
-                    var node = document.querySelector("#discovery");
 
-                    node.style.color = "#AA5698";
+                    ```javascript
+                    let node = document.querySelector('#discovery');
+
+                    node.style.color = '#AA5698';
                     ```
 
                     ```html
                     <p id="discovery" style="color: #AA5698">Hello</p>
                     ```
-                    
+
 
                     | CSS Property | Identifier |
                     | :----------- | :--------- |
@@ -354,7 +354,7 @@
                     | margin-left  | marginLeft |
                     | ...          | ...        |
                     | float        | cssFloat   |
-                    
+
                 </script>
             </section>
 
@@ -362,10 +362,10 @@
                 <script type="text/template">
                     ## Styles
 
-                    |         |            |   | 
+                    |         |            |   |
                     | :-------------: |:-------------:| :-----:|
                     | ![](../images/html64p.png) | .html | Structure |
-                    | ![](../images/css64g.png) | .css      |    Presentation | 
+                    | ![](../images/css64g.png) | .css      |    Presentation |
                     | ![](../images/js64y.png)    | .js | Behavior |
 
                     Avoid putting your css in the .js-file, use classes instead!
@@ -374,12 +374,12 @@
                     ```javascript
                     ...
 
-                    movingElement.style.left = x + "px";
-                    movingElement.style.top = y + "px";
-                    
+                    movingElement.style.left = x + 'px';
+                    movingElement.style.top = y + 'px';
+
                     ...
                     ```
-                    
+
                 </script>
             </section>
 
@@ -390,9 +390,9 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    var node = document.querySelector("#discovery");
+                    let node = document.querySelector('#discovery');
 
-                    node.classList.add("jschanged");
+                    node.classList.add('jschanged');
 
                     ```
                     <span class="lnu source">.html</span>
@@ -407,9 +407,9 @@
                         color: #AA5698;
                     }
                     ```
-                    
+
                     * classList.add, classList.remove, classList.toggle, classList.contains
-                    
+
                 </script>
             </section>
 
@@ -419,29 +419,29 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    var p = document.createElement("p");
-                    p.classList.add("post");
-                    var ul = document.createElement("ul");
-                    var li1 = document.createElement("li");
-                    var li2 = document.createElement("li");
-                    li1.classList.add("active");
-                    var a1 = document.createElement("a");
-                    a1.setAttribute("href", "#");
-                    var text1 = document.createTextNode("The first link");
+                    let p = document.createElement('p');
+                    p.classList.add('post');
+                    let ul = document.createElement('ul');
+                    let li1 = document.createElement('li');
+                    let li2 = document.createElement('li');
+                    li1.classList.add('active');
+                    let a1 = document.createElement('a');
+                    a1.setAttribute('href', '#');
+                    let text1 = document.createTextNode('The first link');
                     a1.appendChild(text1);
-                    var a2 = document.createElement("a");
-                    a2.setAttribute("href", "#");
-                    var text2 = document.createTextNode("The second link");
+                    let a2 = document.createElement('a');
+                    a2.setAttribute('href', '#');
+                    let text2 = document.createTextNode('The second link');
                     a2.appendChild(text2);
                     li1.appendChild(a1);
                     li2.appendChild(a2);
                     ul.appendChild(li1);
                     ul.appendChild(li2);
                     p.appendChild(ul);
-                    document.querySelector("body").appendChild(p);
+                    document.querySelector('body').appendChild(p);
 
                     ```
-                    
+
 
                 </script>
             </section>
@@ -469,11 +469,11 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    var template = document.querySelector('#post-template');
-                    var clone = document.importNode(template.content, true);
-                    document.querySelector("body").appendChild(clone);
+                    let template = document.querySelector('#post-template');
+                    let clone = document.importNode(template.content, true);
+                    document.querySelector('body').appendChild(clone);
                     ```
-                    
+
                     Mustache, Underscore Templates, HandlebarsJS, Jade....
                 </script>
             </section>
@@ -490,7 +490,7 @@
                 ![](https://docs.google.com/drawings/d/1yNMiWNttvEAd5CApyUHqU-aNuXa8ij4qrlS8kLqicQo/pub?w=1307&h=699)
                 </script>
             </section>
-        
+
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## Event
@@ -523,21 +523,21 @@
                 "When *this* happens do *that*"
 
                 ```javascript
-                var a = document.querySelector("#theatag");
+                let a = document.querySelector('#theatag');
 
-                a.addEventListener("click", buttonClicked);
+                a.addEventListener('click', buttonClicked);
 
                 function buttonClicked(event){
-                    console.log("You clicked the link!");
+                    console.log('You clicked the link!');
                 };
 
                 ```
 
                 ```javascript
-                var a = document.querySelector("#theatag");
+                let a = document.querySelector('#theatag');
 
-                a.addEventListener("click", function(event){
-                    console.log("You clicked the link!");
+                a.addEventListener('click', function(event){
+                    console.log('You clicked the link!');
                 });
 
                 ```
@@ -554,12 +554,12 @@
 
 
                 ```javascript
-                var a = document.querySelector("#theatag");
+                let a = document.querySelector('#theatag');
 
-                a.addEventListener("click", function buttonClicked(event){
-                    console.log("You can only click me once!");
+                a.addEventListener('click', function buttonClicked(event){
+                    console.log('You can only click me once!');
 
-                    a.removeEventListener("click", buttonClicked);
+                    a.removeEventListener('click', buttonClicked);
                 });
 
                 ```
@@ -575,30 +575,30 @@
                 <img style="float:left; padding-right: 30px" src="https://docs.google.com/drawings/d/1erJ1Umamf8NOlH3VPRNJVGucIzHcYIX6T8oqnUiyr1k/pub?w=428&h=611" />
 
                 ```javascript
-                var a = document.querySelector("#atag");
-                var p = document.querySelector("#ptag");
+                let a = document.querySelector('#atag');
+                let p = document.querySelector('#ptag');
 
-                a.addEventListener("click", function(event){
-                    console.log("You clicked the link!");
+                a.addEventListener('click', function(event){
+                    console.log('You clicked the link!');
 
                     event.stopPropagation();
                 });
 
-                p.addEventListener("click", function(event){
-                    console.log("Damn you a! I will not be called.");
+                p.addEventListener('click', function(event){
+                    console.log('Damn you a! I will not be called.');
                 });
 
                 ```
 
                 ```javascript
-                p.addEventListener("click", function(event){
-                    console.log("Hihi! Captured it!");
+                p.addEventListener('click', function(event){
+                    console.log('Hihi! Captured it!');
                 }, true);
 
                 ```
                 </script>
             </section>
-            
+
             <!-- What triggered the event? -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
@@ -606,9 +606,9 @@
 
                 Inside an event handler *this*<br>will reference the element <br>which triggered the event.
                 ```javascript
-                var a = document.querySelector("#atag");
+                let a = document.querySelector('#atag');
 
-                a.addEventListener("click", function(event){
+                a.addEventListener('click', function(event){
                     a === this;             // true
                     a === event.target;     // true
                     this === event.target;  // true
@@ -621,7 +621,7 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## What triggered the event?
-                
+
                 Closures can cause headache
 
                 ```html
@@ -634,14 +634,14 @@
                 ```
 
                 ```javascript
-                var aTags = document.querySelectorAll("#links a");
+                let aTags = document.querySelectorAll('#links a');
 
-                for(var i = 0 ; i < aTags.length; i += 1){
-                    aTags[i].addEventListener("click", function(event){
-                        console.log("Clicked link ", i);  // 4
+                for(let i = 0 ; i < aTags.length; i += 1){
+                    aTags[i].addEventListener('click', function(event){
+                        console.log('Clicked link ', i);  // 4
                         console.log(this.textContent);  // Correct
                         console.log(event.target.textContent); // Correct
-                    
+
                     });
                 }
                 ```
@@ -656,7 +656,7 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## What triggered the event?
-                
+
                 Functions ftw, or?
 
                 ```html
@@ -669,10 +669,10 @@
                 ```
 
                 ```javascript
-                var aTags = document.querySelectorAll("#links a");
+                let aTags = document.querySelectorAll('#links a');
 
                 Array.prototype.forEach.call(aTags, function(a){
-                    a.addEventListener("click", function(event){
+                    a.addEventListener('click', function(event){
                         console.log(a.textContent); // Correct
                         console.log(this.textContent); // Correct
                         console.log(event.target.textContent); // Correct
@@ -702,9 +702,9 @@
                 ```
 
                 ```javascript
-                var div = document.querySelectorAll("#links");
+                let div = document.querySelectorAll('#links');
 
-                div.addEventListener("click", function(event){
+                div.addEventListener('click', function(event){
                         console.log(this.textContent); // "The first link" "The second....
                         console.log(event.target.textContent); // "The first link"
 
@@ -725,9 +725,9 @@
                 ## .bind()
 
                 ```javascript
-                var Something = function(element) {
+                let Something = function(element) {
                     this.name = 'Something Good';
-                
+
                     this.onclick1 = function(event) {
                         console.log(this.name); // undefined, as this is the element
                     };
@@ -751,12 +751,12 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## Stop the default action
-                
-                ```javascript
-                var a = document.querySelector("#atag");
 
-                a.addEventListener("click", function(event){
-                    console.log("I got this. Don´t activate the link!");
+                ```javascript
+                let a = document.querySelector('#atag');
+
+                a.addEventListener('click', function(event){
+                    console.log('I got this. Don´t activate the link!');
                     event.preventDefault();
 
                 });
@@ -772,8 +772,8 @@
                 ## Timers
                 Timeout:
                 ```javascript
-                var timer = setTimeout(function(){
-                    console.log("At least 3 seconds passed..");
+                let timer = setTimeout(function(){
+                    console.log('At least 3 seconds passed..');
 
                 }, 3000);
                 ```
@@ -784,8 +784,8 @@
                 *************
                 Interval:
                 ```javascript
-                var timer = setInterval(function(){
-                    console.log("At least 3 seconds passed..");
+                let timer = setInterval(function(){
+                    console.log('At least 3 seconds passed..');
                 }, 3000);
                 ```
 
@@ -804,15 +804,15 @@
                 <br><br><br><br><br>
                 ```javascript
                 setTimeout(function(){
-                    console.log("Sending a message to the event queue");
+                    console.log('Sending a message to the event queue');
                 }, 0);
                 ```
 
                 ```javascript
-                var a = document.querySelectorAll("a")[0];
-                
-                a.addEventListener("click", function(){
-                    console.log("Sending a message when user clicks link");
+                let a = document.querySelectorAll('a')[0];
+
+                a.addEventListener('click', function(){
+                    console.log('Sending a message when user clicks link');
                 });
 
                 ```
@@ -822,7 +822,7 @@
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
                 ## Next lecture
-                
+
                 * The event loop
                 * Asynchronous vs. Synchronous
                 * Blocking vs. nonblocking
@@ -833,7 +833,7 @@
             </section>
 
         </section>
-		   
+
 
         </div>
     </div>

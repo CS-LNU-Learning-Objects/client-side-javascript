@@ -25,7 +25,7 @@ The backend (server-side code) of this assignment will be given and your job is 
   ```
      git pull https://github.com/[COURSECODE]/examination-2.git
   ```
-  This repo should include a VagrantFile with the same stuff that you have been using in the exercises.
+  This repo should include a VagrantFile with the same stuff that you have been using in the exercises. Se README.md-file for instructions on how to install.
 
 6. Start writing your code in this repo and do your commits as usually.
 

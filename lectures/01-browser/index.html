@@ -43,8 +43,8 @@
         <div class="slides">
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
-                <h3>The Browser</h3>
-                <h1>Lecture</h1>
+                <h3>Client-based Web Programming</h3>
+                <h1>The Browser and JavaScript</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -123,7 +123,7 @@
 
                 |         | Usage world wide           | Usage Sweden  |
                 | ------------- |:-------------:| :-----:|
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome-android/chrome-android_64x64.png)      | 58% (37%) | 48% (28%) |
+                | ![](https://github.com/alrra/browser-logos/blob/master/chrome/chrome_64x64.png?raw=true)      | 58% (37%) | 48% (28%) |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | 10% (2%)      |    13% (-) |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | 14% (-)      |   12% (-) |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | 10% (23%)      |    19% (56%) |
@@ -205,7 +205,7 @@
 
                 |         | Browser/<br>rendering Engine           | JavaScript<br>Engine  |
                 | ------------- |:-------------:| :-----:|
-                | <div>![](https://raw.githubusercontent.com/alrra/browser-logos/master/chrome-android/chrome-android_64x64.png) ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png)</div>     | Blink | V8 |
+                | <div>![](https://github.com/alrra/browser-logos/blob/master/chrome/chrome_64x64.png?raw=true) ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png)</div>     | Blink | V8 |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | Trident      |    Chakra |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | Gecko      |   SpiderMonkey |
                 | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | WebKit     |    Nitro |
@@ -240,9 +240,9 @@
             <!-- Seperation of concern -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    #The goal
+                    ##Seperation of concerns (SoC)
 
-                    Seperation of concerns (SoC)<br><br>
+                    <br><br>
 
                     |         |            |   |
                     | :-------------: |:-------------:| :-----:|
@@ -282,9 +282,10 @@
                     Recommended: Add scripts at the far bottom of the page
                     <p class="lnu source">index.html</p>
 <pre><code data-trim contenteditable>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
+        &lt;meta charset="utf-8" /&gt;
         &lt;title>&lt;/title&gt;
     &lt;/head&gt;
 &lt;body&gt;
@@ -311,9 +312,10 @@
                     You can add scripts on the page. Avoid this.
                     <p class="lnu source">index.html</p>
 <pre><code data-trim contenteditable>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
+&lt;!doctype html&gt;
+&lt;html lang="en"&gt;
     &lt;head&gt;
+        &lt;meta charset="utf-8" /&gt;
         &lt;title>&lt;/title&gt;
     &lt;/head&gt;
 &lt;body&gt;
@@ -381,7 +383,7 @@
 
                     <p clasS="lnu source">app.js</p>
                     ```js
-                        var temp = 22;
+                        let temp = 22;
 
                         function myFunction(){
 
@@ -409,9 +411,9 @@
 
                     <p clasS="lnu source">client/source/js/app.js</p>
                     ```javascript
-                    var statistics = require("./statistics");
+                    let statistics = require('./statistics');
 
-                    var stats = statistics.analyze([1, 3, 4, 5, 6, 7]);
+                    let stats = statistics.analyze([1, 3, 4, 5, 6, 7]);
 
                     console.log(stats.max);
                     ```
@@ -422,7 +424,7 @@
                         ...
                     };
 
-                    var mean = function mean(data) {
+                    let mean = function mean(data) {
                         ...
                     };
 

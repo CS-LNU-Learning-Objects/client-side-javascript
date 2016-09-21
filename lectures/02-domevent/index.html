@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>03 - Lecture - Client-based web programming (1DV022)</title>
+    <title>Lecture - DOM and Events</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -44,8 +44,7 @@
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
-                <h3>(1DV022)</h3>
-                <h1>Lecture 03</h1>
+                <h1>DOM and Events</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -226,6 +225,7 @@
                   * NodeList.prototype.forEach = Array.prototype.forEach;
                 * Borrowing methods
                   * Array.prototype.forEach.call(nodes, function(node){ ... });
+                  * Array.prototype.forEach.call(nodes, node => { ... });
                 * Transform NodeList to Array
                   * nodes = Array.prototype.slice.call(nodes);
 
@@ -474,7 +474,7 @@
                     document.querySelector('body').appendChild(clone);
                     ```
 
-                    Mustache, Underscore Templates, HandlebarsJS, Jade....
+                    Mustache, Underscore Templates, HandlebarsJS, Pug....
                 </script>
             </section>
 
@@ -537,6 +537,15 @@
                 let a = document.querySelector('#theatag');
 
                 a.addEventListener('click', function(event){
+                    console.log('You clicked the link!');
+                });
+
+                ```
+
+                ```javascript
+                let a = document.querySelector('#theatag');
+
+                a.addEventListener('click', event => {
                     console.log('You clicked the link!');
                 });
 

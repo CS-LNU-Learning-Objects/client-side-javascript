@@ -4,7 +4,7 @@ DOM, Traversing, Selecting, Manipulating, Templates, Event, How not to - How to,
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/02-domevent/index.html)
 - [Recording](https://youtu.be/HX1BIeJRu88) 2015-11-16, 13-15 (Youtube, Swedish)
-- [Recording](#) 2016-09-21, 13-15 (Youtube, English)
+- [Recording](https://youtu.be/vek2dwPV4Lw) 2016-09-21, 13-15 (Youtube, English)
 - [Demo](https://youtu.be/I7HJwo98EQE) BartBoard demo (+1h).
 
 ### Eloquent JavaScript, 2nd Edition

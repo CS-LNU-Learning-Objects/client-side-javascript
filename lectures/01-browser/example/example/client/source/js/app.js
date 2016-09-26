@@ -2,7 +2,7 @@ class Something{
 
   constructor (element) {
       this.name = 'Something Good';
-
+ 
       this.onclick1 = (event) => {
           console.log(this.name);
       };

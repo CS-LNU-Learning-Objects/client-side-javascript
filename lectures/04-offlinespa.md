@@ -6,12 +6,10 @@ Single Page Applications, History API, Websockets, Offline first, Application ca
 - [Inspelning](https://youtu.be/cyX3NKQZMR0) 2015-12-14, 13-15 (Youtube)
 
 
-## Mandantory resources 
-1. Read: [Promises (Skip "Bonus round: Promises and Generators")](http://www.html5rocks.com/en/tutorials/es6/promises/)
-2. Watch: [Autocomplete + Promises extendet demo](https://youtu.be/K_elRJIJPqw)
-3. Watch: [Three Keys to Successful Single Page Web Applications](https://youtu.be/46Bu9ms9mBg)
-4. Watch: [Christine Spang - WebSockets from the Wire Up - PyCon 2015](https://youtu.be/u5QT3luWx7w)
-5. Watch: [Javascript Offline First - Leeds JS Talk](https://youtu.be/PEHGSiC9_ck)
+## Mandantory resources
+1. Watch: [Three Keys to Successful Single Page Web Applications](https://youtu.be/46Bu9ms9mBg)
+2. Watch: [Christine Spang - WebSockets from the Wire Up - PyCon 2015](https://youtu.be/u5QT3luWx7w)
+3. Watch: [Javascript Offline First - Leeds JS Talk](https://youtu.be/PEHGSiC9_ck)
 
 ## Optional resources
 * [Offline First](http://alistapart.com/article/offline-first)

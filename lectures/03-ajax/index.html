@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>04 - Lecture - Client-based web programming (1DV022)</title>
+    <title>Lecture - AJAX and Storage</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -44,8 +44,7 @@
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
-                <h3>(1DV022)</h3>
-                <h1>Lecture 04</h1>
+                <h1>AJAX & Storage</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -58,7 +57,7 @@
                 <p>
                     This work is produced by Johan Leitet for the course Client-based Web Programming (1DV022) at Linnaeus University.
                 </p>
-                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a 
+                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a
                 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Creative Commons Attribution 4.0 International License</a>.</p>
                 <h4>You are free to </h4>
                 <ul>
@@ -81,18 +80,18 @@
                 <script type="text/template">
                 ## Content
 
-                * The event loop, queue 
+                * The event loop, queue
                 * Asynchronous / Synchronous programming
                 * HTTP
                 * Ajax
                   * XMLHttpRequest
                 * WebStorage
-             
+
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
             </section>
-            
-            <!-- Event / Async --> 
+
+            <!-- Event / Async -->
             <section>
                  <!-- The event loop -->
                 <section class="noborderimages" data-markdown>
@@ -115,10 +114,10 @@
 
                     run();
                     ```
-
+                    [Run using "loupe"](http://latentflip.com/loupe/?code=ZnVuY3Rpb24gaGVsbG8oKSB7CiAgICBjb25zb2xlLmxvZygiV2hlbiBkbyBJIHNheSBoZWxsbz8iKTsKfQoKZnVuY3Rpb24gcnVuKCkgewogICAgc2V0VGltZW91dChoZWxsbywgMjAwMCk7CgogICAgY29uc29sZS5sb2coIkkgcnVuLi4uIik7CiAgICBjb25zb2xlLmxvZygiLi4uIHZlcnkgZmFzdC4iKTsKfQoKcnVuKCk7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
                     </script>
                 </section>
-                
+
                 <!-- The event loop -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
@@ -151,7 +150,7 @@
                     ## Asynchronous programming
 
                     ![](https://docs.google.com/drawings/d/1mVIs2Xpg3a6SsfDgU-pQPu79GwdRgphXRR0fOEhOyWk/pub?w=1417&h=637)<!-- .element: style="float:left" -->
-             
+
                     </script>
                 </section>
                  <section class="noborderimages" data-markdown>
@@ -159,7 +158,7 @@
                     ## Asynchronous programming
 
                     ![](https://docs.google.com/drawings/d/1S9pH2VOiIwXvu4wUMGI6f7TxlqEy_OjhzzjriK6E2Ro/pub?w=1417&h=637)<!-- .element: style="float:left" -->
-             
+
                     </script>
                 </section>
 
@@ -168,7 +167,7 @@
 
                 </section>
             </section>
-            
+
             <!-- Network -->
             <section>
 
@@ -182,14 +181,14 @@
                     * POST
                     * PUT
                     * DELETE
-                    
+
                     </script>
                 </section>
 
                  <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## HTTP status codes
-                    
+
                     | [Status Code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Response_codes)     |            |
                     | :-------------: |:-------------:|
                     | 200      | OK |
@@ -201,7 +200,7 @@
                     | 404 | Not Found |
                     | 500 | Internal server error |
                     | 503 | Sevice Unavailable |
-                    
+
 
                     </script>
                 </section>
@@ -209,7 +208,7 @@
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## HTTP - GET
-                        
+
                     Request:
                     ```http
                     GET /theserverpage/?user=Ellen&message=Hello HTTP/1.1
@@ -229,14 +228,14 @@
                       ... rest of document
 
                     ```
-                    
+
                     </script>
                 </section>
 
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## HTTP - POST
-                        
+
                     Request:
                     ```http
                     POST /theserverpage/ HTTP/1.1
@@ -258,7 +257,7 @@
                       ... rest of document
 
                     ```
-                    
+
                     </script>
                 </section>
 
@@ -272,12 +271,12 @@
                     var req = new XMLHttpRequest();
 
                     req.open("GET", "data.json", false);
-                    
+
                     req.send();
 
                     console.log(req.responseText);
                     ```
-                
+
                     ![](https://docs.google.com/drawings/d/1vIpcF6jlqqpMi_uQ_XQjW0_LOR9INSFdWMKtrM4DP2s/pub?w=1476&h=555)
                     </script>
                 </section>
@@ -300,15 +299,15 @@
                     // Do a lot of other stuff
                     ```
                     ![](https://docs.google.com/drawings/d/1T6Cn2zGIg9RoUi4c5oyb6lPp5xArnoxDAy9BXzGS2uE/pub?w=1476&h=555)
-             
+
                     </script>
                 </section>
-                
+
                 <!-- Ajax -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## AJAX
-                    **A**synchronous **J**avascript **A**nd **X**ML  
+                    **A**synchronous **J**avascript **A**nd **X**ML
 
                     * 1999
                       * Microsoft adds an Active X-control (XMLHttpRequest) into Internet Explorer 5.
@@ -317,11 +316,11 @@
                     * 2005
                       * The term *AJAX* was made up by Jesse James Garrett through the article *[Ajax: A New Approach to Web Applications](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)*
                     * 2006
-                      * Microsoft adds the XMLHttpRequest-objeect in the same way as other browsers (IE7) 
+                      * Microsoft adds the XMLHttpRequest-objeect in the same way as other browsers (IE7)
 
                     </script>
                 </section>
-                
+
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## CORS
@@ -345,7 +344,7 @@
 
                     </script>
                 </section>
-                
+
 
 
                  <section class="noborderimages" data-markdown>
@@ -366,7 +365,7 @@
                         });
 
                         req.open(config.method, config.url);
-                        req.send(null);
+                        req.send();
                     }
                     ```
 
@@ -382,7 +381,7 @@
                         console.log(response);
                     });
 
-                    ```     
+                    ```
                     </script>
                 </section>
 
@@ -415,14 +414,23 @@
                     ```
                     </script>
                 </section>
-                
+
                 <!-- Promises -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## Promises
 
-                    ![]()<!-- .element: style="float:left" -->
-             
+
+
+                    </script>
+                </section>
+                <!-- Generators -->
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## Generators*
+
+                    
+
                     </script>
                 </section>
 
@@ -436,11 +444,11 @@
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## JSON
-                    
+
                     * JavaScript Object Notation
-                    * A subset of JavaScript. 
+                    * A subset of JavaScript.
                     * Language independent
-                    
+
                     |         |            |
                     | :-------------: |:-------------:|
                     | RFC      | 4627 |
@@ -455,7 +463,7 @@
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## JSON
-                    
+
                     ```json
                     {
                         "name": "Bill",
@@ -464,7 +472,7 @@
                     }
                     ```
                     * Datatypes:
-                      * string, number, boolean, null, object or array 
+                      * string, number, boolean, null, object or array
 
                     ```json
                     [
@@ -482,7 +490,7 @@
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## JSON
-                    
+
                     * JSON.parse()
                       * JSON -> Javascript
                     * JSON.stringify()
@@ -505,8 +513,8 @@
                     console.log(obj);
                     ```
 
-                   
-                    
+
+
                     </script>
                 </section>
             </section>
@@ -515,7 +523,7 @@
             <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## Forms
-                    
+
                     * Make sure the normal form works without JS
                     * Try to use configs from the form (method, action...)
                     * form.addEventListener("submit", ...)
@@ -526,7 +534,7 @@
 
                     </script>
             </section>
-            
+
 
 
             <!-- WebStorage -->
@@ -540,7 +548,7 @@
                       * Session storage
                       * Local storage
                     * IndexedDB
-                  
+
                     </script>
                 </section>
                 <section class="noborderimages" data-markdown>
@@ -549,10 +557,10 @@
 
                     * Often used to keep a session againt the server
                     * Use max 4096 bytes per cookie (RFC6265)
-                    * No more than 50 cookies per domain. (RFC6265) 
+                    * No more than 50 cookies per domain. (RFC6265)
 
                     ![](../images/cookies.png)
-                  
+
                     </script>
                 </section>
 
@@ -582,7 +590,7 @@
 
                     * setItem, getItem, removeItem
 
-                    <span class="lnu source">http://mdn.github.io/web-storage-demo/</span>                          
+                    <span class="lnu source">http://mdn.github.io/web-storage-demo/</span>
                     </script>
                 </section>
 

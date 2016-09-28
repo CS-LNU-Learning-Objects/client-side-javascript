@@ -80,12 +80,14 @@
                 <script type="text/template">
                 ## Content
 
-                * The event loop, queue
+                * The queue and the event loop
                 * Asynchronous / Synchronous programming
                 * HTTP
                 * Ajax
                   * XMLHttpRequest
                 * WebStorage
+                * Promises
+                * Generator functions
 
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
@@ -420,16 +422,45 @@
                     <script type="text/template">
                     ## Promises
 
+                    ```JavaScript
+                    module.exports.request = function(config) {
+                        return new Promise ( function (resolve, reject){
+                          var req = new XMLHttpRequest();
 
+                          req.addEventListener("load", function() {
 
-                    </script>
+                              if (req.status >= 400) {
+                                  reject(req.status);
+                              }
+                              resolve(req.responseText);
+                          });
+
+                          req.open(config.method, config.url);
+                          req.send();
+                        }); // new Promise end
+                    };
+                    ```
+
+                    ```JavaScript
+                    var ajax = require("./ajax");
+
+                    ajax.request({method: "get", url: "data.json"})
+                      .then( data => {
+                        console.log(response);
+                      })
+                      .catch( error => {
+                        throw new Error("Network error " + error);
+                      });
+                    });
+                    ```
+                  </script>
                 </section>
                 <!-- Generators -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## Generators*
 
-                    
+
 
                     </script>
                 </section>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>04 - Lecture - Client-based web programming (1DV022)</title>
+    <title>Lecture - Single Page Applications</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -44,8 +44,7 @@
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
-                <h3>(1DV022)</h3>
-                <h1>Lecture 05</h1>
+                <h1>SPA & Offline</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -105,7 +104,7 @@
                     * Often informational
                     * Can have embedded web applications
                     * Ex. barometern.se
-                    
+
                     Web application
                     * Focus on user interaction
                     * Ex. drive.google.com
@@ -229,14 +228,14 @@
                     ul.addEventListener("click", function(event){
                       event.preventDefault();
 
-                      var stateObj =  { 
+                      var stateObj =  {
                         accountnbr: event.target.getAttribute("data-account"),
                         account: event.target.getAttribute("data-account-title")
                       }
 
-                      history.pushState(stateObj, "Account information: "+stateObj.account, 
+                      history.pushState(stateObj, "Account information: "+stateObj.account,
                         "/account/"+stateObj.accountnbr);
-                      
+
                       // Load accountinformation and show it
                       console.log(stateObj);
                     });
@@ -246,7 +245,7 @@
                     <a href="example/pushstate/index.html" target="_blank">Run</a>
                     </script>
                 </section>
-                
+
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## pushState
@@ -256,7 +255,7 @@
                     ```JavaScript
                     window.addEventListener("popstate", function(event){
 
-                      // When an old state is triggered. 
+                      // When an old state is triggered.
                       console.log(event.state.account + " with account number " + event.state.accountnbr);
 
                     });
@@ -329,14 +328,14 @@
                     ## Web Sockets
 
                     ```javascript
-                    var socket = new WebSocket("ws://www.example.com/socketserver", "charcords");
-                    var data = {x: 12, y: 14};
+                    let socket = new WebSocket('ws://www.example.com/socketserver', 'charcords');
+                    let data = {x: 12, y: 14};
 
-                    socket.addEventListener("open", function (event) {
+                    socket.addEventListener('open', function (event) {
                       socket.send(JSON.stringify(data));
                     });
 
-                    socket.addEventListener("message", function (event) {
+                    socket.addEventListener('message', function (event) {
                       console.log(event.data);
                     });
                     ```
@@ -344,8 +343,6 @@
                     ```javascript
                     socket.close();
                     ```
-                    To come: Exercise - Instachat
-
                   </script>
                 </section>
             </section> <!-- End Sockets -->
@@ -376,8 +373,8 @@
                     <script type="text/template">
                     ## Offline first
 
-                    >Stop treating a lack of connectivity like an error. Your app should be able to handle disconnections and get on with business as gracefully as possible. 
-                    
+                    >Stop treating a lack of connectivity like an error. Your app should be able to handle disconnections and get on with business as gracefully as possible.
+
                     Alex Feyerke http://alistapart.com/article/offline-first
 
                     </script>
@@ -480,8 +477,8 @@
                 * Requires https (not under localhost)
                 * Only asynchronus calls are premitted in the service worker
                 * Makes heavy use of promises
-                * Compatibility problems in 2015 (Chrome only)
-                
+                * Compatibility problems in 2016 (Chrome/FF/Opera only)
+
 
               </script>
             </section>

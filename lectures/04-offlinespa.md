@@ -3,8 +3,8 @@ Single Page Applications, History API, Websockets, Offline first, Application ca
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/05/index.html#/)
-- [Inspelning](https://youtu.be/cyX3NKQZMR0) 2015-12-14, 13-15 (Youtube)
-
+- [Recording](https://youtu.be/cyX3NKQZMR0) 2015-12-14, 13-15 (Youtube, Swedish)
+- [Recording](https://youtu.be/od-CxePLoeY) 2016-10-13, 13-15 (Youtube, English)
 
 ## Mandantory resources
 1. Watch: [Three Keys to Successful Single Page Web Applications](https://youtu.be/46Bu9ms9mBg)

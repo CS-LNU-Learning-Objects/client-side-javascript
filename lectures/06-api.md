@@ -2,7 +2,7 @@
 API, WebComponents, Physical Web,
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/06/index.html#/)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/06-api/)
 - [Recording](#) 2016-10-19, 11-12 (Youtube, English)
 
 ## Mandantory resources

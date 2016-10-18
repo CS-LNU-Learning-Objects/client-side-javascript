@@ -2,7 +2,7 @@
 Accessibility, optimization
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/05/index.html#/)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/05-optimization/)
 - [Recording](#) 2016-10-19, 10-11 (Youtube, English)
 
 ## Mandantory resources

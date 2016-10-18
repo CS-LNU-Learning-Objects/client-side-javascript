@@ -1,11 +1,14 @@
 ## Keywords
 Accessibility, optimization
 
-## Mandantory resources 
+## Resources
+- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/05/index.html#/)
+- [Recording](#) 2016-10-19, 10-11 (Youtube, English)
+
+## Mandantory resources
+
 ### Accessibility:
-1. Tillgänglighet kopplat till html och css. Jag ser detta som en lämplig introduktion till tillgänglighet om du inte tittat på detta tidigare.
-[Föreläsning från HT14](https://youtu.be/PKkUEDgHRJ8?t=58m52s)
-2. Föreläsning från föregångaren till denna kurs som behandlar tillgänglighet och säkerhet. Det är bara första delen som är obligatorisk. Del 2 kommer via att behandla senare. [Föreläsning från HT14](https://youtu.be/waOIdyty-Hc?t=2m40s)
+1. [Making Accessible Web Apps Using HTML5 and ChromeVox](https://youtu.be/x18vEEfpK3g)
 
 ### Optimization:
 1. Javascript language optimization[Franziska Hinkelmann - A Trip to the Zoo](https://www.youtube.com/watch?v=1kAkGWJZ6Zo)

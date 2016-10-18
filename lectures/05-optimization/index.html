@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="sv-se">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Lecture - Optimization & Accessibility</title>
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="icon" href="../images/favicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="../reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/css/theme/black.lnu.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="../reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div class="reveal lnu">
+
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <!-- Start -->
+            <section class="center" data-state="lnu-intro">
+                <h3>Client-based Web Programming</h3>
+                <h1>Optimization & Accessibility</h1>
+                <div class="lnu-footer">
+                    <img src="../images/lnu-logotype.png" />
+                    <img src="../images/lnu-symbol.png" />
+                </div>
+            </section>
+
+            <!-- CC -->
+            <section data-state="lnu-cc">
+                <h2>Licence for this work</h2>
+                <p>
+                    This work is produced by Johan Leitet for the course Client-based Web Programming (1DV022) at Linnaeus University.
+                </p>
+                <p>All content in this work excluding photographs, icons, picture of course litterature and Linnaeus University logotype and symbol, is licensied under a
+                <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/80x15.png" /></a><br />Creative Commons Attribution 4.0 International License</a>.</p>
+                <h4>You are free to </h4>
+                <ul>
+                    <li>copy and redistribute the material in any medium or format</li>
+                    <li>spread the whole or parts of the content</li>
+                    <li>show the whole or parts of the content publicly and digital</li>
+                    <li>convert the content to another format</li>
+                    <li>change the content</li>
+                </ul>
+                <p>
+                    If you change the content do not use the photographs, icons, picture of the course literature or Linnaeus University logotype and symbol in your new work!
+                </p>
+                <p>
+                    At all times you must give credit to: ”Linnaeus university – Client-based Web Programming (1DV022)” with the link https://coursepress.lnu.se/kurs/klientbaserad-webbprogrammering/ and to the Creative Common-license above.
+                </p>
+                <p>
+                  Special credits:
+                  * Server by Mister Pixel from the Noun Project
+                  * Browser by Fabiano Coelho from the Noun Project
+                </p>
+            </section>
+
+            <!-- Content -->
+            <section data-markdown>
+                <script type="text/template">
+                ## Content
+
+                * Optimization
+                * Accessibility
+
+                </script>
+                <pre><code></code></pre> <!-- Fix for color coding in md -->
+            </section>
+
+
+            <!-- Accessibility -->
+            <section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                      Accessibility in web applications
+
+
+
+                    </script>
+                </section>
+                  <!-- image cc by: https://www.flickr.com/photos/kurafire/ -->
+                <section class="noborderimages" data-background-image="images/accessibility.jpg" data-markdown>
+
+                    <script type="text/template">
+                      ##Accessibility
+
+                      10-20 % have a functional impairment
+
+                      hearing/visual/cognitive/mobility impairments
+
+                    </script>
+                </section>
+
+                <!-- image cc by: https://www.flickr.com/photos/bearpark/ -->
+                <section data-background-image="images/ear.jpg" data-markdown>
+                    <script type="text/template">
+                      ##Hearing impairments
+
+                    </script>
+                </section>
+
+                <!-- image cc by: https://www.flickr.com/photos/11249990@N06/ -->
+                <section data-background-image="images/eye.jpg" data-markdown>
+                    <script type="text/template">
+                      ##Visual impairments
+
+                    </script>
+                </section>
+
+                <!-- image cc by: https://www.flickr.com/photos/kirsanov/ -->
+                <section data-background-image="images/brain.jpg" data-markdown>
+                    <script type="text/template">
+                      ##Cognitive impairments
+
+                    </script>
+                </section>
+
+                <!-- image cc by: https://www.flickr.com/photos/draphotography/ -->
+                <section data-background-image="images/limb.jpg" data-markdown>
+                    <script type="text/template">
+                      ##Mobility impairments
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+
+                    <script type="text/template">
+                      ##Keyboard navigation
+                      Make sure you can navigate using the keyboard
+
+                      * Use interactive elements
+                      * Use aria-attributes
+                      * Use tabindex
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+
+                    <script type="text/template">
+                      ##Interactive elements
+                      Do not make non interactive elements interactive
+
+                      ```javascript
+                      let h1 = document.querySelectorAll('#products h1')[0];
+
+                      h1.addEventListener('click', event => { ... });
+                      ```
+
+                    </script>
+                </section>
+
+                <!-- image cc by: https://www.flickr.com/photos/kudo88/ -->
+                <section data-background-image="images/cat.jpg" data-markdown>
+
+                    <script type="text/template">
+                      ##Non text content
+                      Make sure to give alternitives to non text content
+
+                      ```html
+                      <img src="image/cat.jpg" alt="Picture of a cat lying on a pice of a brick wall" />
+                      ```
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                      ##Guidelines
+
+                      * WCAG - Web Content Accessability Guidelines
+                      * UAAG - User Agent Accessibility Guidelines
+                      * ATAG - Authoring Tool Accessibility Guidelines
+                      * ARIA - Accessible Rich Internet Applications
+
+                      https://www.w3.org/standards/webdesign/accessibility
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                      ## Try a screenreader!
+
+                      * http://www.chromevox.com/
+                      * JAWS
+                      * MacOS Screen reader
+                      * NVDA
+                      * ...
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                      ## Optimization
+
+                      Resourses on the course web page
+                    </script>
+                </section>
+
+
+
+              </section>
+
+
+        </div>
+    </div>
+
+    <script src="../reveal.js/lib/js/head.min.js"></script>
+    <script src="../reveal.js/js/reveal.js"></script>
+
+    <script>
+        // Full list of configuration options available at:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            width: 1280,
+            height: 800,
+            controls: true,
+            progress: true,
+            history: true,
+            center: false,
+
+            transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            // Optional reveal.js plugins
+            dependencies: [
+                { src: '../reveal.js/lib/js/classList.js', condition: function () { return !document.body.classList; } },
+                { src: '../reveal.js/plugin/markdown/marked.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/markdown/markdown.js', condition: function () { return !!document.querySelector('[data-markdown]'); } },
+                { src: '../reveal.js/plugin/highlight/highlight.js', async: true, condition: function () { return !!document.querySelector('pre code'); }, callback: function () { hljs.initHighlightingOnLoad(); } },
+                { src: '../reveal.js/plugin/zoom-js/zoom.js', async: true },
+                { src: '../reveal.js/plugin/notes/notes.js', async: true }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <title>Test</title>
+</head>
+<body>
+
+  <script>
+
+  "use strict;"
+  // Use custom elements API v1 to register a new HTML tag and define its JS behavior
+  // using an ES6 class. Every instance of <fancy-tab> will have this same prototype.
+
+  class WebComponentElement extends HTMLElement {
+    constructor() {
+      super();
+
+      let shadowRoot = this.attachShadow({mode: 'open'});
+      const t = document.querySelector('#wc-template');
+      const instance = t.content.cloneNode(true);
+      shadowRoot.appendChild(instance);
+    }
+  }
+
+//  customElements.define('wc', WebComponentElement);
+
+/*
+  window.addEventListener('devicelight', e => {
+    document.body.innerHTML = '<div>' + e.value + 'lux</div>';
+  });
+*/
+
+  navigator.getBattery().then( battery => {
+    document.body.innerHTML = '<div>' + battery.level*100 + ' %</div>';
+
+    battery.addEventListener('levelchange', e => {
+      document.body.innerHTML = '<div>...' + battery.level*100 + ' %</div>';
+    });
+  });
+
+  </script>
+
+  <wc></wc>
+</body>

@@ -85,53 +85,87 @@
                 <script type="text/template">
                 ## Content
 
-                * Optimization
-                * Accessibility
+                * Web Workers
+                * HTML5 Canvas
+                * Web VR API (Gamepad API)
+                * Physical Web (BT-api)
+                * Web components
+                * WebRTC
+                * WebGL
+                * Web Assembly
+                * ....
+
+
+
+
 
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
             </section>
 
 
-            <!-- Accessibility -->
+            <!-- Start -->
             <section>
 
-                <section class="noborderimages" data-markdown>
+                <section class="noborderimages" data-background-image="https://www.w3.org/html/logo/downloads/HTML5_sticker.png" data-markdown>
                     <script type="text/template">
-                      https://developer.mozilla.org/en-US/docs/Web/API
-                      https://chromestatus.com/
-
-                      Mandantory:
-                      https://youtu.be/NCGLPp778JY
-                      https://youtu.be/_BUwOBdLjzQ
-
-                      HTML5 Canvas
-                      Web Workers
-
-                      Payment Request API
-
-
-                      Media Recorder API
-                      Web Audio API
-
-
-
-                      Web Assembly
-
-                      http://webcomponents.org/
-                        - Templates
-                        - Shadow DOM API
-                        - HTML Imports
-
 
                     </script>
                 </section>
         </section>
 
+        <section class="noborderimages" data-markdown>
+            <script type="text/template">
+              ##Web Workers
+
+              ```html
+              The highest prime number discovered so far is: <span id="pn"></span>
+              ```
+
+              ```javascript
+              let worker = new Worker('worker.js');
+              let dataContainer = document.querySelector('#pn');
+
+              worker.addEventListener('message', e => {
+                dataContainer.textContent = e.data;
+              });
+              ```
+
+              worker.js
+              ```javascript
+                let n = 1;
+
+                search: while(true) {
+                  n += 1;
+                  for(let i = 2; i <= Math.sqrt(n); i += 1)
+                    if (n % i === 0)
+                      continue search;
+                  postMessage(n);
+                }
+              ```
+            </script>
+        </section>
+        <section class="noborderimages" data-markdown>
+            <script type="text/template">
+              ##HTML 5 Canvas
+
+              &lt;canvas&gt;-element is used to create graphics using javascript.
+
+              * Graphs
+              * Photo-composition
+              * Animations
+              * Real-time games
+              * ...
+
+              Ex: http://bedford.io/projects/coaltrace/
+
+            </script>
+        </section>
+
 
         <section class="noborderimages" data-markdown>
             <script type="text/template">
-              #Web VR API
+              ##Web VR API
 
               ![](images/webvr.png)
 
@@ -257,7 +291,65 @@
                       ```
                     </script>
                 </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                      ##Polymer
+                      A polyfill for Web components
+
+                      ![](https://www.polymer-project.org/images/logos/p-logo.png)
+
+                      https://www.polymer-project.org
+                    </script>
+                </section>
               </section> <!-- Web Components End -->
+
+
+              <section class="noborderimages" data-markdown>
+                  <script type="text/template">
+                    ##WebRTC
+                    * getUserMedia()
+                    * MediaRecorder
+                    * RTCPeerConnection
+                    * RTCDataChannel
+
+                    https://webrtc.org/
+                  </script>
+              </section>
+
+              <section class="noborderimages" data-markdown>
+                  <script type="text/template">
+                    ##WebGL
+
+                    > WebGL is a web technology that brings hardware-accelerated 3D graphics to the browser without installing additional software.
+
+                    https://paperplanes.world/
+                  </script>
+              </section>
+
+              <section class="noborderimages" data-markdown>
+                  <script type="text/template">
+                    ##Web Assembly (WASM)
+
+                    > WebAssembly or wasm is a new portable, size- and load-time-efficient format suitable for compilation to the web.
+
+                    https://github.com/webassembly/
+                  </script>
+              </section>
+
+              <section class="noborderimages" data-markdown>
+                  <script type="text/template">
+                    ##Payment Request API
+
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wAbOyCSzIeM?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+
+
+                    https://github.com/w3c/webpayments/wiki
+                  </script>
+              </section>
+
+
+
 
               <section class="noborderimages" data-markdown>
                   <script type="text/template">

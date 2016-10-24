@@ -2,7 +2,7 @@
 Single Page Applications, History API, Websockets, Offline first, Application cache, Service Workers
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/1dv022/syllabus/master/lectures/05/index.html#/)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/04-offlinespa)
 - [Recording](https://youtu.be/cyX3NKQZMR0) 2015-12-14, 13-15 (Youtube, Swedish)
 - [Recording](https://youtu.be/od-CxePLoeY) 2016-10-13, 13-15 (Youtube, English)
 

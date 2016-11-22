@@ -87,7 +87,7 @@
                   * XMLHttpRequest
                 * WebStorage
                 * Promises
-                * Generator functions
+                * (Generator functions)
 
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
@@ -178,7 +178,7 @@
                     ## HTTP
                     Hypertext Transfer Protocol
 
-                    Methods:
+                    Methods (Verbs):
                     * GET
                     * POST
                     * PUT
@@ -270,7 +270,7 @@
                     Do not do this
 
                     ```
-                    var req = new XMLHttpRequest();
+                    let req = new XMLHttpRequest();
 
                     req.open("GET", "data.json", false);
 
@@ -288,7 +288,7 @@
                     ## Asynchronous request
 
                     ```JavaScript
-                    var req = new XMLHttpRequest();
+                    let req = new XMLHttpRequest();
 
                     req.addEventListener("load", function(){
                         // function to run when response from server
@@ -355,7 +355,7 @@
 
                     ```JavaScript
                     module.exports.request = function(config, callback) {
-                        var req = new XMLHttpRequest();
+                        let req = new XMLHttpRequest();
 
                         req.addEventListener("load", function() {
 
@@ -372,7 +372,7 @@
                     ```
 
                     ```JavaScript
-                    var ajax = require("./ajax");
+                    let ajax = require("./ajax");
 
                     ajax.request({method: "get", url: "data.json"}, function(error, response){
 
@@ -394,8 +394,8 @@
                     https://gist.github.com/Leitet/b8a08c0b2c83dc40875f
 
                     ```JavaScript
-                    var ajax = require("./ajax");
-                    var url = "first.json";
+                    let ajax = require("./ajax");
+                    let url = "first.json";
 
                     ajax.request({method: "get", url: url}, function(error, response){
 
@@ -425,7 +425,7 @@
                     ```JavaScript
                     module.exports.request = function(config) {
                         return new Promise( function (resolve, reject){
-                          var req = new XMLHttpRequest();
+                          let req = new XMLHttpRequest();
 
                           req.addEventListener("load", function() {
 
@@ -442,11 +442,11 @@
                     ```
 
                     ```JavaScript
-                    var ajax = require("./ajax");
+                    let ajax = require("./ajax");
 
                     ajax.request({method: "get", url: "data.json"})
                       .then( data => {
-                        console.log(response);
+                        console.log(data);
                       })
                       .catch( error => {
                         throw new Error("Network error " + error);
@@ -531,7 +531,7 @@
 
 
                     ```javascript
-                    var obj = {
+                    let obj = {
                         name: "Ellen",
                         age: 25,
                         city: "Kalmar"
@@ -613,9 +613,9 @@
                     }
 
                     function setStyles() {
-                          var currentColor = localStorage.getItem('bgcolor');
-                          var currentFont = localStorage.getItem('font');
-                          var currentImage = localStorage.getItem('image');
+                          let currentColor = localStorage.getItem('bgcolor');
+                          let currentFont = localStorage.getItem('font');
+                          let currentImage = localStorage.getItem('image');
                           ...
                     ```
 
@@ -630,7 +630,7 @@
                     ## JSON in storage
 
                      ```JavaScript
-                    var style = {
+                    let style = {
                         bgcolor: document.getElementById('bgcolor').value,
                         font: document.getElementById('font').value,
                         image: document.getElementById('image').value

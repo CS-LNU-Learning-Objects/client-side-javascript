@@ -4,7 +4,7 @@ window.addEventListener("hashchange", function(event){
 
 	if(hash.substr(2,9) === "/account/"){
 		var account = hash.substr(11); //47435675
-		
+
 		console.log(account);
 		// Fetch account information from server
 		// Display account information

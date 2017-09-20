@@ -5,7 +5,7 @@ Accessibility, optimization
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/05-optimization/)
 - [Recording](https://youtu.be/WzEOPm7lXFo) 2016-10-19, 10-11 (Youtube, English)
 
-## Mandantory resources
+## Mandatory resources
 
 ### Accessibility:
 1. [Making Accessible Web Apps Using HTML5 and ChromeVox](https://youtu.be/x18vEEfpK3g)

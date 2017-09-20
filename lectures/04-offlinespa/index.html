@@ -173,11 +173,11 @@
 
                     ```JavaScript
                         // Router
-                        window.addEventListener("hashchange", function(event){
-                            var hash = event.target.location.hash; // #!/account/47435675
+                        window.addEventListener("hashchange", event => {
+                            let hash = event.target.location.hash; // #!/account/47435675
 
                             if(hash.substr(2,9) === "/account/"){
-                                var account = hash.substr(11); //47435675
+                                let account = hash.substr(11); //47435675
 
                                 // Fetch account information from server
                                 // Display account information
@@ -223,12 +223,12 @@
 
 
                     ```JavaScript
-                    var ul = document.querySelector("#links");
+                    let ul = document.querySelector("#links");
 
-                    ul.addEventListener("click", function(event){
+                    ul.addEventListener("click", event => {
                       event.preventDefault();
 
-                      var stateObj =  {
+                      let stateObj =  {
                         accountnbr: event.target.getAttribute("data-account"),
                         account: event.target.getAttribute("data-account-title")
                       }

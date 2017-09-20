@@ -12,7 +12,7 @@ This examination is worth 3.5 credits (3.5hp).
 ## Preperation
 1. Do the excercises at A and B level. (at least)
 2. Read the chapters in the book for this part.
-3. Make sure Virtual Box and Vagrant are installed on your computer.
+3. Make sure Node and NPM is installed on your computer.
 4. Use Git to clone down your examination-repo. It should be something like
   ```
      git clone https://github.com/[COURSECODE]/[USERNAME]-examination-3.git
@@ -21,7 +21,7 @@ This examination is worth 3.5 credits (3.5hp).
   ```
      git pull https://github.com/[COURSECODE]/examination-3.git
   ```
-  This repo should include a VagrantFile with the same stuff that you have been using in the exercises. Se README.md-file for instructions on how to install.
+  This repo should include a boilerplate with the same stuff that you have been using in the exercises. Se README.md-file for instructions on how to install.
 
 6. Start writing your code in this repo and do your commits as usually.
 

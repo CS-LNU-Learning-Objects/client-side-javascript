@@ -44,7 +44,7 @@
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
                 <h2>Peer-Instruction 1</h2>
-                <h2>http://pingo.upb.de/204585</h2>
+                <h2>http://pingo.upb.de/754191</h2>
 
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
@@ -73,10 +73,10 @@
 
                       Which option do you have to select the li element with the text node "Second one"
 
-                      * document.querySelector("#SecondOne");
-                      * document.querySelectorAll("li")[1];
-                      * document.getElementById("numberlist").firstChild.nextSibling;
-                      * document.getElementById("numberlist").children[1];
+                      * document.querySelector('#SecondOne')
+                      * document.querySelectorAll('li')[1]
+                      * document.getElementById('numberlist').firstChild.nextSibling
+                      * document.getElementById('numberlist').children[1]
                     </script>
             </section>
 
@@ -85,11 +85,11 @@
                     ### What is wrong with the following code?
                     <br />
                     ```javascript
-                    var lis = document.querySelectorAll("li");
+                    var lis = document.querySelectorAll('li')
 
                     lis.forEach(function(li){
-                      li.textContent = "Some text";
-                    });
+                      li.textContent = 'Some text'
+                    })
                     ```
 
                     <br />
@@ -110,10 +110,10 @@
                     ```
                     Javascript:
                     ```javascript
-                    var div = document.querySelector("#theDiv");
-                    div.setAttribute("class", "blue");
-                    div.classList.toggle("number");
-                    div.classList.add("tiger");
+                    var div = document.querySelector('#theDiv')
+                    div.setAttribute('class', 'blue')
+                    div.classList.toggle('number')
+                    div.classList.add('tiger')
                     ```
                     Which class/classes is set on the div?
                     * red, blue, tiger
@@ -130,13 +130,13 @@
                   <script type="text/template">
                     Given:
                     ```javascript
-                    console.log("dog");
+                    console.log('dog')
 
                     setTimeout(function(){
-                      console.log("bird");
+                      console.log('bird')
                     }, 0)
 
-                    console.log("cat");
+                    console.log('cat')
 
                     ```
                     In what order will the animals be logged?
@@ -158,17 +158,17 @@
                     ```
 
                     ```javascript
-                    var div1 = document.querySelector("#div1");
-                    var btn1 = document.querySelector("#btn1");
+                    var div1 = document.querySelector('#div1')
+                    var btn1 = document.querySelector('#btn1')
 
-                    div1.addEventListener("click", function(e){
-                      console.log("The div");
-                       e.stopPropagation();
-                    });
-                    btn1.addEventListener("click", function(e){
-                        console.log("The button");
-                      	e.stopPropagation();
-                    });
+                    div1.addEventListener('click', function(e){
+                      console.log('The div')
+                       e.stopPropagation()
+                    })
+                    btn1.addEventListener('click', function(e){
+                        console.log('The button')
+                      	e.stopPropagation()
+                    })
                     ```
 
                     What is written in the log when the button is clicked:
@@ -185,13 +185,13 @@
                     What is wrong with this code:
 
                     ```javascript
-                    var xhr = new XMLHttpRequest();
-                    xhr.open("GET", "http://whatever.com");
-                    xhr.send();
+                    var xhr = new XMLHttpRequest()
+                    xhr.open('GET', 'http://whatever.com')
+                    xhr.send()
 
                     setTimeout(function(){
-                        console.log(xhr.respondeText);
-                    }, 1000);
+                        console.log(xhr.respondeText)
+                    }, 1000)
                     ```
                     * Nothing. It will work
                     * XMLHttpRequest object is deprecated
@@ -206,18 +206,18 @@
                     What is the problems in this case
 
                     ```javascript
-                    var xhr = new XMLHttpRequest();
-                    xhr.addEventListener("load", ajax);
-                    xhr.open("GET", "http://whatever.com");
-                    xhr.send();
+                    var xhr = new XMLHttpRequest()
+                    xhr.addEventListener('load', ajax);
+                    xhr.open('GET', 'http://whatever.com')
+                    xhr.send()
 
                     function ajax (){
-                      document.body.innerHTML = xhr.responseText;
+                      document.body.innerHTML = xhr.responseText
                     }
                     ```
                     * Synchronous calls should always be avoided
                     * You should always provide an callback function to the eventlistener
-                    * You need to require("./ajax");
+                    * You need to require('./ajax');
                     * There are security concerns regarding the use of innerHTML
 
                   </script>

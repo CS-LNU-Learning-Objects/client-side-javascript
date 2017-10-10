@@ -173,16 +173,16 @@
 
                     ```JavaScript
                         // Router
-                        window.addEventListener("hashchange", event => {
-                            let hash = event.target.location.hash; // #!/account/47435675
+                        window.addEventListener('hashchange', event => {
+                            let hash = window.location.hash // #!/account/47435675
 
-                            if(hash.substr(2,9) === "/account/"){
-                                let account = hash.substr(11); //47435675
+                            if(hash.substr(2,9) === '/account/'){
+                                let account = hash.substr(11) //47435675
 
                                 // Fetch account information from server
                                 // Display account information
                             }
-                        });
+                        })
                     ```
                     <a href="example/index.html" target="_blank">Run</a>
 
@@ -201,7 +201,7 @@
                       * .length
 
                     ```JavaScript
-                    window.history.back();
+                    window.history.back()
                     ```
 
                     </script>
@@ -223,22 +223,22 @@
 
 
                     ```JavaScript
-                    let ul = document.querySelector("#links");
+                    let ul = document.querySelector('#links')
 
-                    ul.addEventListener("click", event => {
-                      event.preventDefault();
+                    ul.addEventListener('click', event => {
+                      event.preventDefault()
 
                       let stateObj =  {
-                        accountnbr: event.target.getAttribute("data-account"),
-                        account: event.target.getAttribute("data-account-title")
+                        accountnbr: event.target.getAttribute('data-account'),
+                        account: event.target.getAttribute('data-account-title')
                       }
 
-                      history.pushState(stateObj, "Account information: "+stateObj.account,
-                        "/account/"+stateObj.accountnbr);
+                      window.history.pushState(stateObj, `Account information: ${stateObj.account}`,
+                        `/account/${stateObj.accountnbr}`);
 
                       // Load accountinformation and show it
-                      console.log(stateObj);
-                    });
+                      console.log(stateObj)
+                    })
 
                     ```
 
@@ -253,17 +253,17 @@
 
 
                     ```JavaScript
-                    window.addEventListener("popstate", function(event){
+                    window.addEventListener('popstate', event => {
 
                       // When an old state is triggered.
-                      console.log(event.state.account + " with account number " + event.state.accountnbr);
+                      console.log(`${event.state.account} with account number ${event.state.accountnbr}`)
 
-                    });
+                    })
 
                     ```
                     Reading current state
                     ```JavaScript
-                    var currentState = history.state;
+                    var currentState = window.history.state
                     ```
                     </script>
                 </section>
@@ -328,20 +328,20 @@
                     ## Web Sockets
 
                     ```javascript
-                    let socket = new WebSocket('ws://www.example.com/socketserver', 'charcords');
-                    let data = {x: 12, y: 14};
+                    let socket = new window.WebSocket('ws://www.example.com/socketserver', 'charcords')
+                    let data = {x: 12, y: 14}
 
-                    socket.addEventListener('open', function (event) {
-                      socket.send(JSON.stringify(data));
-                    });
+                    socket.addEventListener('open', event => {
+                      socket.send(JSON.stringify(data))
+                    })
 
-                    socket.addEventListener('message', function (event) {
-                      console.log(event.data);
-                    });
+                    socket.addEventListener('message', event => {
+                      console.log(event.data)
+                    })
                     ```
 
                     ```javascript
-                    socket.close();
+                    socket.close()
                     ```
                   </script>
                 </section>
@@ -400,16 +400,16 @@
 
                   ```javascript
                   if(window.navigator.onLine){
-                    console.log("You are online! Or.....?");
+                    console.log('You are online! Or.....?')
                   }
 
-                  windows.addEventListener("online", function{
-                    console.log("Online?");
-                  });
+                  windows.addEventListener('online', event =>
+                    console.log('Online?')
+                  })
 
-                  windows.addEventListener("offline", function{
-                    console.log("Offline?");
-                  });
+                  windows.addEventListener('offline', event => {
+                    console.log('Offline?')
+                  })
 
                   ```
                   It is not that simple.... :(

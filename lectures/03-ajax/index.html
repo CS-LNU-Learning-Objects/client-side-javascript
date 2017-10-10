@@ -87,8 +87,7 @@
                   * XMLHttpRequest
                 * WebStorage
                 * Promises
-                * fetch-api
-                * Async/Await
+                * (Generator functions)
 
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
@@ -105,17 +104,17 @@
                     <br><br><br><br>
                     ```JavaScript
                     function hello(){
-                        console.log("When do I say hello?")
+                        console.log("When do I say hello?");
                     }
 
                     function run(){
-                        setTimeout(hello, 0)
+                        setTimeout(hello, 0);
 
-                        console.log("I run...")
-                        console.log("... very fast.")
+                        console.log("I run...");
+                        console.log("... very fast.");
                     }
 
-                    run()
+                    run();
                     ```
                     [Run using "loupe"](http://latentflip.com/loupe/?code=ZnVuY3Rpb24gaGVsbG8oKSB7CiAgICBjb25zb2xlLmxvZygiV2hlbiBkbyBJIHNheSBoZWxsbz8iKTsKfQoKZnVuY3Rpb24gcnVuKCkgewogICAgc2V0VGltZW91dChoZWxsbywgMjAwMCk7CgogICAgY29uc29sZS5sb2coIkkgcnVuLi4uIik7CiAgICBjb25zb2xlLmxvZygiLi4uIHZlcnkgZmFzdC4iKTsKfQoKcnVuKCk7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
                     </script>
@@ -129,18 +128,18 @@
 
                     ```JavaScript
                     function hello(){
-                        console.log("When do I say hello?")
+                        console.log("When do I say hello?");
                     }
 
                     function run(){
-                        setTimeout(hello, 0)
+                        setTimeout(hello, 0);
 
-                        console.log("I run...")
-                        alert("...")
-                        console.log("... very fast.")
+                        console.log("I run...");
+                        alert("...");
+                        console.log("... very fast.");
                     }
 
-                    run()
+                    run();
                     ```
                     https://jsfiddle.net/Leitet/dvktvphm/
 
@@ -271,13 +270,13 @@
                     Do not do this
 
                     ```
-                    let req = new XMLHttpRequest()
+                    let req = new XMLHttpRequest();
 
-                    req.open('GET', 'data.json', false)
+                    req.open("GET", "data.json", false);
 
-                    req.send()
+                    req.send();
 
-                    console.log(req.responseText)
+                    console.log(req.responseText);
                     ```
 
                     ![](https://docs.google.com/drawings/d/1vIpcF6jlqqpMi_uQ_XQjW0_LOR9INSFdWMKtrM4DP2s/pub?w=1476&h=555)
@@ -289,15 +288,15 @@
                     ## Asynchronous request
 
                     ```JavaScript
-                    let req = new XMLHttpRequest()
+                    let req = new XMLHttpRequest();
 
-                    req.addEventListener('load', function(){
+                    req.addEventListener("load", function(){
                         // function to run when response from server
-                        console.log(req.responseText)
+                        console.log(req.responseText);
                     });
 
-                    req.open('GET', 'data.json')
-                    req.send()
+                    req.open("GET", "data.json");
+                    req.send();
 
                     // Do a lot of other stuff
                     ```
@@ -356,33 +355,33 @@
 
                     ```JavaScript
                     module.exports.request = function(config, callback) {
-                        let req = new XMLHttpRequest()
+                        let req = new XMLHttpRequest();
 
-                        req.addEventListener('load', function() {
+                        req.addEventListener("load", function() {
 
                             if (req.status >= 400) {
                                 callback(req.status);
                             }
 
-                            callback(null, req.responseText)
-                        })
+                            callback(null, req.responseText);
+                        });
 
-                        req.open(config.method, config.url)
-                        req.send()
+                        req.open(config.method, config.url);
+                        req.send();
                     }
                     ```
 
                     ```JavaScript
-                    let ajax = require('./ajax')
+                    let ajax = require("./ajax");
 
-                    ajax.request({method: 'get', url: 'data.json'}, function(error, response){
+                    ajax.request({method: "get", url: "data.json"}, function(error, response){
 
                         if(error){
-                            throw new Error(`Network error ${error}`)
+                            throw new Error("Network error " + error);
                         }
 
-                        console.log(response)
-                    })
+                        console.log(response);
+                    });
 
                     ```
                     </script>
@@ -395,25 +394,25 @@
                     https://gist.github.com/Leitet/b8a08c0b2c83dc40875f
 
                     ```JavaScript
-                    const ajax = require('./ajax');
-                    let url = 'first.json'
+                    let ajax = require("./ajax");
+                    let url = "first.json";
 
-                    ajax.request({method: 'get', url: url}, function(error, response){
+                    ajax.request({method: "get", url: url}, function(error, response){
 
-                        url = doSomethingToGetNewURL(response)
-                        ajax.request({method: 'get', url: url}, function(error, response){
+                        url = doSomethingToGetNewURL(response);
+                        ajax.request({method: "get", url: url}, function(error, response){
 
-                            url = doSomethingToGetNewURL(response)
-                            ajax.request({method: 'get', url: url}, function(error, response){
+                            url = doSomethingToGetNewURL(response);
+                            ajax.request({method: "get", url: url}, function(error, response){
 
-                                url = doSomethingToGetNewURL(response)
-                                ajax.request({method: 'get', url: url}, function(error, response){
-                                    doSomethingWithTheFinalData(response)
+                                url = doSomethingToGetNewURL(response);
+                                ajax.request({method: "get", url: url}, function(error, response){
+                                    doSomethingWithTheFinalData(response);
 
-                                })
-                            })
-                        })
-                    })
+                                });
+                            });
+                        });
+                    });
                     ```
                     </script>
                 </section>
@@ -426,84 +425,47 @@
                     ```JavaScript
                     module.exports.request = function(config) {
                         return new Promise( function (resolve, reject){
-                          let req = new XMLHttpRequest()
+                          let req = new XMLHttpRequest();
 
-                          req.addEventListener('load', function() {
+                          req.addEventListener("load", function() {
 
                               if (req.status >= 400) {
-                                  reject(req.status)
+                                  reject(req.status);
                               }
-                              resolve(req.responseText)
-                          })
+                              resolve(req.responseText);
+                          });
 
-                          req.open(config.method, config.url)
-                          req.send()
-                        }) // new Promise end
-                    }
+                          req.open(config.method, config.url);
+                          req.send();
+                        }); // new Promise end
+                    };
                     ```
 
                     ```JavaScript
-                    let ajax = require('./ajax')
+                    let ajax = require("./ajax");
 
-                    ajax.request({method: 'get', url: 'data.json'})
+                    ajax.request({method: "get", url: "data.json"})
                       .then( data => {
-                        console.log(data)
+                        console.log(data);
                       })
                       .catch( error => {
-                        throw new Error(`Network error ${error}`)
-                      })
-                    })
+                        throw new Error("Network error " + error);
+                      });
+                    });
                     ```
                   </script>
                 </section>
 
-                <!-- Fetch API -->
+                <!-- fetch -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
-                    ## Fetch API
+                    ## fetch
 
-                    ```Javascript
-                    let search = { query: 'LIV' }
-
-                    let config = {  method:  'post', 
-                                    headers: {'Content-Type': 'application/json'}, 
-                                    body:    JSON.stringify(search)
-                                 }
                     
-                    fetch('http://localhost:3001/teams', config)
-                        .then(data => data.json()).then(search => {
-                          let teams = search.match
-                          console.log(teams)
-                        })
-                    ```
 
                     </script>
                 </section>
 
-                <!-- Async / Await -->
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## Fetch API
-
-                    ```Javascript
-                    async function getAllTeams (query) {
-                        let search = { query }
-                        
-                        let config = {  method:  'post', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(search)}
-                      
-                        let data = await fetch('http://localhost:3001/teams', config)
-                        let json = await data.json()
-                        return json.match
-                      }
-                      
-                      getAllTeams('MAN').then(teams => {
-                        console.log(teams)
-                      })
-                    ```
-
-                    </script>
-                </section>
-                
 
                 <!-- Async/Await -->
                 <section class="noborderimages" data-markdown>

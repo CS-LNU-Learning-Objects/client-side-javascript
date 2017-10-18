@@ -123,24 +123,24 @@
               ```
 
               ```javascript
-              let worker = new Worker('worker.js');
-              let dataContainer = document.querySelector('#pn');
+              let worker = new Worker('worker.js')
+              let dataContainer = document.querySelector('#pn')
 
               worker.addEventListener('message', e => {
-                dataContainer.textContent = e.data;
-              });
+                dataContainer.textContent = e.data
+              })
               ```
 
               worker.js
               ```javascript
-                let n = 1;
+                let n = 1
 
                 search: while(true) {
-                  n += 1;
+                  n += 1
                   for(let i = 2; i <= Math.sqrt(n); i += 1)
                     if (n % i === 0)
-                      continue search;
-                  postMessage(n);
+                      continue search
+                  postMessage(n)
                 }
               ```
             </script>
@@ -180,12 +180,12 @@
 
               ```javascript
 
-              window.addEventListener("gamepadconnected", e => {
-                  let index = e.gamepad.index;
-                  let id = e.gamepad.id;
+              window.addEventListener('gamepadconnected', e => {
+                  let index = e.gamepad.index
+                  let id = e.gamepad.id
                   let nbrButtons = e.gamepad.buttons.length
                   let nbrAxes = e.gamepad.axes.length
-              });
+              })
               ```
 
               https://www.w3.org/TR/gamepad/
@@ -267,23 +267,23 @@
                       ```
 
                       ```javascript
-                      class WebComponentElement extends HTMLElement {
+                      class MyWebComponent extends HTMLElement {
                         constructor() {
-                          super();
+                          super()
 
-                          let shadowRoot = this.attachShadow({mode: 'open'});
-                          const t = document.querySelector('#wc-template');
-                          const instance = t.content.cloneNode(true);
-                          shadowRoot.appendChild(instance);
+                          let shadowRoot = this.attachShadow({mode: 'open'})
+                          const t = document.querySelector('#wc-template')
+                          const instance = t.content.cloneNode(true)
+                          shadowRoot.appendChild(instance)
                         }
                       }
 
-                      customElements.define('wc', WebComponentElement);
+                      customElements.define('my-webcomponent', MyWebComponent)
                       ```
 
                       ```html
                       ...
-                      <wc></wc>
+                      <my-webcomponent></my-webcomponent>
                       ```
                     </script>
                 </section>

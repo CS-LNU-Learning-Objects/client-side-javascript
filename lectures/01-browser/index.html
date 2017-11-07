@@ -90,7 +90,7 @@
                       * Where to load scripts
                       * Sandboxing
                       * Polution
-                      * "Browserify"
+                      * "Webpack"
                 </script>
                 <pre><code></code></pre>
             </section>
@@ -123,13 +123,13 @@
 
                 |         | Usage world wide           | Usage Sweden  |
                 | ------------- |:-------------:| :-----:|
-                | ![](https://github.com/alrra/browser-logos/blob/master/chrome/chrome_64x64.png?raw=true)      | 64 % (50 %) | 54 % (37 %) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | 9 % (- %)      |    14 % (-) |
-                | ![](https://upload.wikimedia.org/wikipedia/en/d/d0/UC_Browser_Logo.png) | -  (14 %)      |    - (-) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | 14 % (-)      |   13 % ( < 1 %) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | 6 % (19 %)      |    9 % (49 %) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png) | 2 % (6 %)     |    1 % (< 1 %) |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_64x64.png) | 4 % (-)     |    8% (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_64x64.png)      | 64 % (50 %) | 54 % (37 %) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_64x64.png) | 9 % (- %)      |    14 % (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/uc/uc_64x64.png) | -  (14 %)      |    - (-) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_64x64.png)      | 14 % (-)      |   13 % ( < 1 %) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_64x64.png) | 6 % (19 %)      |    9 % (49 %) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_64x64.png) | 2 % (6 %)     |    1 % (< 1 %) |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_64x64.png) | 4 % (-)     |    8% (-) |
 
                 <p class="lnu source">http://gs.statcounter.com/</p>
                 </script>
@@ -206,11 +206,11 @@
 
                 |         | Browser/<br>rendering Engine           | JavaScript<br>Engine  |
                 | ------------- |:-------------:| :-----:|
-                | <div>![](https://github.com/alrra/browser-logos/blob/master/chrome/chrome_64x64.png?raw=true) ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png)</div>     | Blink | V8 |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/internet-explorer-tile/internet-explorer-tile_64x64.png) | Trident      |    Chakra |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/firefox/firefox_64x64.png)      | Gecko      |   SpiderMonkey |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/safari/safari_64x64.png) | WebKit     |    Nitro |
-                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/edge/edge_64x64.png) | EdgeHTML     |    Chakra (fork) |
+                | <div>![](https://github.com/alrra/browser-logos/blob/master/src/chrome/chrome_64x64.png?raw=true) ![](https://raw.githubusercontent.com/alrra/browser-logos/master/opera/opera_64x64.png)</div>     | Blink | V8 |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_64x64.png) | Trident      |    Chakra |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_64x64.png)      | Gecko      |   SpiderMonkey |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_64x64.png) | WebKit     |    Nitro |
+                | ![](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_64x64.png) | EdgeHTML     |    Chakra (fork) |
 
                 </script>
             </section>
@@ -294,14 +294,14 @@
         ... A lot of content here ...
     &lt;/section&gt;
 
-    &lt;script src="javascript/build.js"&gt;&lt;/script&gt;
+    &lt;script src="js/app.js"&gt;&lt;/script&gt;
 &lt;/body&gt;
 </pre></code>
 
 <pre><code style="color:white">
-    dist/
-       |-javascript/
-                  |-build.js
+    src/
+       |-js/
+          |-app.js
        |-index.html
 
       </code></pre>
@@ -321,7 +321,7 @@
     &lt;/head&gt;
 &lt;body&gt;
     &lt;script&gt;
-      console.log("Testing out js in the browser");
+      console.log('Testing out js in the browser')
     &lt;/script&gt;
 
     &lt;section&gt;
@@ -357,22 +357,15 @@
                     An *example* of a folder structure
 
                     ```
-                    client/
-                         |-source/
-                                |-js/
-                                   |-app.js
-                                |-css/
-                                |-index.html
-                         |-debug/
-                               |-javascript/
-                               |-stylesheet/
-                               |-index.html
-                         |-dist/
-                              |-javascript/
-                              |-stylesheet/
-                              |-index.html
+                    src/
+                        |-js/
+                            |-app.js
+                        |-css/
+                        |-index.html
                     ```
+                  
                 </script>
+            
             </section>
 
             <!-- Global -->
@@ -384,21 +377,21 @@
 
                     <p clasS="lnu source">app.js</p>
                     ```js
-                        let temp = 22;
+                        let temp = 22
 
                         function myFunction(){
 
-                            increaseTempBy = 12;
+                            increaseTempBy = 12
 
-                            temp += increaseTempBy;
+                            temp += increaseTempBy
 
                         }
                     ```
 
                     ```js
-                        console.log(window.temp); // 22
+                        console.log(window.temp) // 22
 
-                        console.log(window.increaseTempBy); // 12
+                        console.log(window.increaseTempBy) // 12
                     ```
                 </script>
             </section>
@@ -406,28 +399,28 @@
             <!-- Browserify -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    ##"Browserify" to the rescue
+                    ##"Webpack" to the rescue
 
                     We can use node-modules in the browser!
 
-                    <p clasS="lnu source">client/source/js/app.js</p>
+                    <p clasS="lnu source">src/js/app.js</p>
                     ```javascript
-                    let statistics = require('./statistics');
+                    let statistics = require('./statistics')
 
-                    let stats = statistics.analyze([1, 3, 4, 5, 6, 7]);
+                    let stats = statistics.analyze([1, 3, 4, 5, 6, 7])
 
-                    console.log(stats.max);
+                    console.log(stats.max)
                     ```
 
-                    <p clasS="lnu source">client/source/js/statistics.js</p>
+                    <p clasS="lnu source">src/js/statistics.js</p>
                     ```
                     exports.analyze = function(data) {
                         ...
-                    };
+                    }
 
                     let mean = function mean(data) {
                         ...
-                    };
+                    }
 
                     ```
                 </script>
@@ -437,12 +430,12 @@
             <!-- Browserify - Build -->
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                ## "Browserify" - Build step
+                ## "Webpack" - Build step
                 ... however, we need an aditional build step.
 
                 <p clasS="lnu source">Terminal:</p>
                 ```
-                   browserify source/js/app.js > dist/javascript/build.js
+                   webpack
                 ```
 
                 </script>
@@ -452,16 +445,26 @@
 
            <section data-markdown>
                 <script type="text/template">
-                ## "Browserify" - Debug step
-                ... using --debug we get source mapping.
+                ## "Webpack" - Debugging
+                ... Webpack will be configured to do source mapping
 
-                <p clasS="lnu source">Terminal:</p>
+                <p clasS="lnu source">webpack.config.js:</p>
+                ```json
+                ...
+                module.exports = {
+                    entry: './src/js/app.js',
+                    output: {
+                      filename: 'build.js',
+                      path: path.resolve(__dirname, 'dist')
+                    },
+                    devServer: {
+                      contentBase: path.join(__dirname, 'src'),
+                      port: 4000,
+                      public: 'localhost:4000'
+                    },
+                    devtool: 'cheap-eval-source-map',
+                    ...
                 ```
-                   browserify source/js/app.js > debug/javascript/build.js --debug
-                ```
-
-                ![](../images/browserify_client.png)<br>
-                ![](../images/browserify_browser.png)
 
 
                 </script>

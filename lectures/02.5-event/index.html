@@ -85,9 +85,7 @@
                   * Selecting
                   * Manipulating
                   * Templates
-                  * Custom elements
-                  * Shadow DOM
-                * Event - Next week
+                * Event
                   * How not to - How to
                   * Event delegation
                   * Timers
@@ -145,14 +143,14 @@
 
                 ```html
                 <html>\n
-                ••<head>\n
-                ••••<title>Incident report</title>\n
-                ••</head>\n
-                ••<body>\n
-                ••••<h1>Incident report</h1>\n
-                ••••<p><a href="#">Last report</a></p>\n
-                ••••<p><img src="photo" alt="" /></p>\n
-                ••</body>\n
+                \t<head>\n
+                \t\t<title>Incident report</title>\n
+                \t</head>\n
+                \t<body>\n
+                \t\t<h1>Incident report</h1>\n
+                \t\t<p><a href="#">Last report</a></p>\n
+                \t\t<p><img src="photo" alt="" /></p>\n
+                \t</body>\n
                 </html>\n
                 ```
                 </script>
@@ -183,13 +181,13 @@
 
 
                     ```javascript
-                    let mainDiv = document.getElementById('main')
+                    let mainDiv = document.getElementById('main');
 
-                    let pTags = document.getElementsByTagName('p')
-                    console.log(pTags.length)
+                    let pTags = document.getElementsByTagName('p');
+                    console.log(pTags.length);
 
-                    let tags = document.getElementsByClassName('post')
-                    console.log(tags.length)
+                    let tags = document.getElementsByClassName('post');
+                    console.log(tags.length);
                     ```
 
 	            </script>
@@ -208,11 +206,11 @@
 
 
                 ```
-                let mainDiv = document.querySelector('#main')
+                let mainDiv = document.querySelector('#main');
 
-                let pTags = document.querySelectorAll('p')
+                let pTags = document.querySelectorAll('p');
 
-                let tags = document.querySelectorAll('p.tag')
+                let tags = document.querySelectorAll('p.tag');
                 ```
 
 	            </script>
@@ -224,12 +222,12 @@
                 NodeList.prototype !== Array.prototype
 
                 * Extending the NodeList (anti-pattern)
-                  * NodeList.prototype.forEach = Array.prototype.forEach
+                  * NodeList.prototype.forEach = Array.prototype.forEach;
                 * Borrowing methods
-                  * Array.prototype.forEach.call(nodes, function(node){ ... })
-                  * Array.prototype.forEach.call(nodes, node => { ... })
+                  * Array.prototype.forEach.call(nodes, function(node){ ... });
+                  * Array.prototype.forEach.call(nodes, node => { ... });
                 * Transform NodeList to Array
-                  * nodes = Array.prototype.slice.call(nodes)
+                  * nodes = Array.prototype.slice.call(nodes);
 
 	            </script>
 	        </section>
@@ -275,12 +273,12 @@
                     * document.createTextNode - Create a new <span style="border: 3px solid blue">TEXT_NODE</span>
 
                     ```javascript
-                    let newTag = document.createElement('p')
-                    let newText = document.createTextNode('Cool text!')
+                    let newTag = document.createElement('p');
+                    let newText = document.createTextNode('Cool text!');
 
-                    newTag.appendChild(newText)
+                    newTag.appendChild(newText);
 
-                    document.querySelector('#main').appendChild(newTag)
+                    document.querySelector('#main').appendChild(newTag);
 
                     ```
                 </script>
@@ -297,7 +295,7 @@
                       * Removes all children from element
 
                     ```javascript
-                        element.textContent = 'Text...'
+                        element.textContent = 'Text...';
                     ```
 
                     * innerHTML
@@ -307,7 +305,7 @@
                       * Less secure. Use textContent!
 
                     ```javascript
-                        element.innerHTML = '<p>Some text</p>'
+                        element.innerHTML = '<p>Some text</p>';
                     ```
 
 
@@ -323,13 +321,13 @@
                     * removeAttribute('attribute name')
 
                     ```javascript
-                    let newTag = document.createElement('img')
+                    let newTag = document.createElement('img');
 
-                    newTag.setAttribute('src', 'image/picture.svg')
+                    newTag.setAttribute('src', 'image/picture.svg');
 
                     // The browser fetches and caches the 'picture.svg'
 
-                    document.querySelector('#main').appendChild(newTag)
+                    document.querySelector('#main').appendChild(newTag);
 
                     ```
                 </script>
@@ -340,9 +338,9 @@
                     ## Styles
 
                     ```javascript
-                    let node = document.querySelector('#discovery')
+                    let node = document.querySelector('#discovery');
 
-                    node.style.color = '#AA5698'
+                    node.style.color = '#AA5698';
                     ```
 
                     ```html
@@ -376,8 +374,8 @@
                     ```javascript
                     ...
 
-                    movingElement.style.left = x + 'px'
-                    movingElement.style.top = y + 'px'
+                    movingElement.style.left = x + 'px';
+                    movingElement.style.top = y + 'px';
 
                     ...
                     ```
@@ -392,9 +390,9 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    let node = document.querySelector('#discovery')
+                    let node = document.querySelector('#discovery');
 
-                    node.classList.add('jschanged')
+                    node.classList.add('jschanged');
 
                     ```
                     <span class="lnu source">.html</span>
@@ -421,26 +419,26 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    let div = document.createElement('div')
-                    div.classList.add('post')
-                    let ul = document.createElement('ul')
-                    let li1 = document.createElement('li')
-                    let li2 = document.createElement('li')
-                    li1.classList.add('active')
-                    let a1 = document.createElement('a')
-                    a1.setAttribute('href', '#')
-                    let text1 = document.createTextNode('The first link')
-                    a1.appendChild(text1)
-                    let a2 = document.createElement('a')
-                    a2.setAttribute('href', '#')
-                    let text2 = document.createTextNode('The second link')
-                    a2.appendChild(text2)
-                    li1.appendChild(a1)
-                    li2.appendChild(a2)
-                    ul.appendChild(li1)
-                    ul.appendChild(li2)
-                    div.appendChild(ul)
-                    document.querySelector('body').appendChild(div)
+                    let div = document.createElement('div');
+                    div.classList.add('post');
+                    let ul = document.createElement('ul');
+                    let li1 = document.createElement('li');
+                    let li2 = document.createElement('li');
+                    li1.classList.add('active');
+                    let a1 = document.createElement('a');
+                    a1.setAttribute('href', '#');
+                    let text1 = document.createTextNode('The first link');
+                    a1.appendChild(text1);
+                    let a2 = document.createElement('a');
+                    a2.setAttribute('href', '#');
+                    let text2 = document.createTextNode('The second link');
+                    a2.appendChild(text2);
+                    li1.appendChild(a1);
+                    li2.appendChild(a2);
+                    ul.appendChild(li1);
+                    ul.appendChild(li2);
+                    div.appendChild(ul);
+                    document.querySelector('body').appendChild(div);
 
                     ```
 
@@ -454,14 +452,14 @@
 
                     <span class="lnu source">.html</span>
                     ```html
-                    <template id='post-template'>
-                        <div class='post'>
+                    <template id="post-template">
+                        <div class="post">
                             <ul>
-                                <li class='active'>
-                                    <a href='#'>The first link</a>
+                                <li class="active">
+                                    <a href="#">The first link</a>
                                 </li>
                                 <li>
-                                    <a href='#'>The second link</a>
+                                    <a href="#">The second link</a>
                                 </li>
                             </ul>
                         </div>
@@ -471,9 +469,9 @@
 
                     <span class="lnu source">.js</span>
                     ```javascript
-                    let template = document.querySelector('#post-template')
-                    let clone = document.importNode(template.content, true)
-                    document.querySelector('body').appendChild(clone)
+                    let template = document.querySelector('#post-template');
+                    let clone = document.importNode(template.content, true);
+                    document.querySelector('body').appendChild(clone);
                     ```
 
                     Mustache, Underscore Templates, HandlebarsJS, Pug....
@@ -488,13 +486,13 @@
                     ```javascript
                     const template = document.createElement('template')
                     template.innerHTML = `
-                        <div class='post'>
+                        <div class="post">
                             <ul>
-                                <li class='active'>
-                                    <a href='#'>The first link</a>
+                                <li class="active">
+                                    <a href="#">The first link</a>
                                 </li>
                                 <li>
-                                    <a href='#'>The second link</a>
+                                    <a href="#">The second link</a>
                                 </li>
                             </ul>
                         </div>`
@@ -506,173 +504,375 @@
                     let clone = template.cloneNode(true)
                     document.querySelector('body').appendChild(clone)
                     ```
+
+                    Mustache, Underscore Templates, HandlebarsJS, Pug....
                 </script>
             </section>
-        </section>
+		</section>
 
-        <!-- Custom Elements -->
+        <!-- Event -->
         <section>
+
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    ## Larger example
+                ## Event
 
-                    ![](../images/bart.webp)
-
-                    
+                ![](https://docs.google.com/drawings/d/1yNMiWNttvEAd5CApyUHqU-aNuXa8ij4qrlS8kLqicQo/pub?w=1307&h=699)
                 </script>
             </section>
 
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    ## Custom Elements
+                ## Event
 
-                    ![](../images/bartboard.png)
+                * User initialized
+                  * Mouse, scrolling, keyboard ...
+                * Browser initialized
+                  * Page loaded, DOM Changed ...
+                * Network
+                  * Content loaded ...
 
-                    <span class="lnu source">app.html</span>
-                    ```html
-                        <bart-board text='I will not polute the global scope'></bart-board>
-                    ```
-                    
+                </script>
+            </section>
+
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Anti-pattern
+
+                ```html
+                <a href="page.html" onclick="doSomething();">The link</a>
+                ```
                 </script>
             </section>
 
 
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    ## Custom Elements
+                ## Add event listeners
 
-                    <span class="lnu source">bart-board.js</span>
-                    ```javascript
-                        class BartBoard extends window.HTMLElement {...}
-                        
-                        window.customElements.define('bart-board', BartBoard)
-                    ```
+                "When *this* happens do *that*"
 
-                    <span class="lnu source">app.html</span>
-                    ```html
-                        <bart-board text='I will not polute the global scope'></bart-board>
-                    ```
+                ```javascript
+                let a = document.querySelector('#theatag');
 
-                    <span class="lnu source">app.js</span>
-                    ```js
-                        let bb2 = document.createElement('bart-board')
-                        bb2.setAttribute(text, 'I will not use == ever again')
-                    ```
+                a.addEventListener('click', buttonClicked);
+
+                function buttonClicked(event){
+                    console.log('You clicked the link!');
+                };
+
+                ```
+
+                ```javascript
+                let a = document.querySelector('#theatag');
+
+                a.addEventListener('click', function(event){
+                    console.log('You clicked the link!');
+                });
+
+                ```
+
+                ```javascript
+                let a = document.querySelector('#theatag');
+
+                a.addEventListener('click', event => {
+                    console.log('You clicked the link!');
+                });
+
+                ```
+
+                </script>
+            </section>
+
+
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Remove event listeners
+
+                using Named function expressions
+
+
+                ```javascript
+                let a = document.querySelector('#theatag');
+
+                a.addEventListener('click', function buttonClicked(event){
+                    console.log('You can only click me once!');
+
+                    a.removeEventListener('click', buttonClicked);
+                });
+
+                ```
+
+
+                </script>
+            </section>
+
+             <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Propagation
+
+                <img style="float:left; padding-right: 30px" src="https://docs.google.com/drawings/d/1erJ1Umamf8NOlH3VPRNJVGucIzHcYIX6T8oqnUiyr1k/pub?w=428&h=611" />
+
+                ```javascript
+                let a = document.querySelector('#atag');
+                let p = document.querySelector('#ptag');
+
+                a.addEventListener('click', function(event){
+                    console.log('You clicked the link!');
+
+                    event.stopPropagation();
+                });
+
+                p.addEventListener('click', function(event){
+                    console.log('Damn you a! I will not be called.');
+                });
+
+                ```
+
+                ```javascript
+                p.addEventListener('click', function(event){
+                    console.log('Hihi! Captured it!');
+                }, true);
+
+                ```
+                </script>
+            </section>
+
+            <!-- What triggered the event? -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## What triggered the event?
+
+                Inside an event handler *this*<br>will reference the element <br>which triggered the event.
+                ```javascript
+                let a = document.querySelector('#atag');
+
+                a.addEventListener('click', function(event){
+                    a === this;             // true
+                    a === event.target;     // true
+                    this === event.target;  // true
+                });
+                ```
+                </script>
+            </section>
+
+            <!-- Event and for-loop -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## What triggered the event?
+
+                Closures can cause headache
+
+                ```html
+                <div id="links">
+                    <a href="#">The first link</a>
+                    <a href="#">The second link</a>
+                    <a href="#">The third link</a>
+                    <a href="#">The forth link</a>
+                </div>
+                ```
+
+                ```javascript
+                let aTags = document.querySelectorAll('#links a');
+
+                for(let i = 0 ; i < aTags.length; i += 1){
+                    aTags[i].addEventListener('click', function(event){
+                        console.log('Clicked link ', i);  // 4
+                        console.log(this.textContent);  // Correct
+                        console.log(event.target.textContent); // Correct
+
+                    });
+                }
+                ```
+
+                <span class="lnu source">https://jsfiddle.net/Leitet/j0umya0d/</span>
+
+
+                </script>
+            </section>
+
+            <!-- Event and forEach -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## What triggered the event?
+
+                Functions ftw, or?
+
+                ```html
+                <div id="links">
+                    <a href="#">The first link</a>
+                    <a href="#">The second link</a>
+                    <a href="#">The third link</a>
+                    <a href="#">The forth link</a>
+                </div>
+                ```
+
+                ```javascript
+                let aTags = document.querySelectorAll('#links a');
+
+                Array.prototype.forEach.call(aTags, function(a){
+                    a.addEventListener('click', function(event){
+                        console.log(a.textContent); // Correct
+                        console.log(this.textContent); // Correct
+                        console.log(event.target.textContent); // Correct
+                    });
+                });
+                ```
+
+                <span class="lnu source">https://jsfiddle.net/Leitet/j0umya0d/</span>
+
+
+                </script>
+            </section>
+
+            <!-- Event delegation -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Event delegation
+                Add one listener instead of four
+
+                ```html
+                <div id="links">
+                    <a href="#">The first link</a>
+                    <a href="#">The second link</a>
+                    <a href="#">The third link</a>
+                    <a href="#">The forth link</a>
+                </div>
+                ```
+
+                ```javascript
+                let div = document.querySelectorAll('#links');
+
+                div.addEventListener('click', function(event){
+                        console.log(this.textContent); // "The first link" "The second....
+                        console.log(event.target.textContent); // "The first link"
+
+                        this === div; //true
+                        this === event.currentTarget; // true
+                });
+                ```
+
+                <span class="lnu source">https://jsfiddle.net/Leitet/j0umya0d/</span>
+
+
+                </script>
+            </section>
+
+            <!-- .bind() -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## .bind()
+
+                ```javascript
+                let Something = function(element) {
+                    this.name = 'Something Good';
+
+                    this.onclick1 = function(event) {
+                        console.log(this.name); // undefined, as this is the element
+                    };
+                    this.onclick2 = function(event) {
+                        console.log(this.name); // 'Something Good', as this is the binded Something object
+                    };
+
+                    element.addEventListener('click', this.onclick1, false);
+                    element.addEventListener('click', this.onclick2.bind(this), false);
+                }
+                ```
+                * Problem:
+                  * You can not remove the event listener beacuse bind creates a new function
+
+                <p class="lnu source">https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener</p>
+                <p class="lnu source">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind<p>
+                </script>
+            </section>
+
+            <!-- preventDefault -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Stop the default action
+
+                ```javascript
+                let a = document.querySelector('#atag');
+
+                a.addEventListener('click', function(event){
+                    console.log('I got this. Don´t activate the link!');
+                    event.preventDefault();
+
+                });
+                ```
+
+                Another alternative is to *return false* from the listener.
+                </script>
+            </section>
+
+            <!-- preventDefault -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## Timers
+                Timeout:
+                ```javascript
+                let timer = setTimeout(function(){
+                    console.log('At least 3 seconds passed..');
+
+                }, 3000);
+                ```
+
+                ```javascript
+                clearTimeout(timer); // Stops the timer
+                ```
+                *************
+                Interval:
+                ```javascript
+                let timer = setInterval(function(){
+                    console.log('At least 3 seconds passed..');
+                }, 3000);
+                ```
+
+                ```javascript
+                clearInterval(timer); // Stops the interval
+                ```
+                </script>
+            </section>
+
+            <!-- The event loop -->
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                ## The queue (event loop)
+
+                <img style="float:left" src="https://docs.google.com/drawings/d/1e4BVPRteCsIQ4rg8ZcqO0prt7S3cC7kkxM65nsm4AYM/pub?w=383&h=755" />
+                <br><br><br><br><br>
+                ```javascript
+                setTimeout(function(){
+                    console.log('Sending a message to the event queue');
+                }, 0);
+                ```
+
+                ```javascript
+                let a = document.querySelectorAll('a')[0];
+
+                a.addEventListener('click', function(){
+                    console.log('Sending a message when user clicks link');
+                });
+
+                ```
                 </script>
             </section>
 
             <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                    ## Custom Elements
+                ## Next lecture
 
-                    <span class="lnu source">bart-board.js</span>
-                    ```javascript
-                        class BartBoard extends window.HTMLElement {
-                            constructor() {
-                                super()        
-                            }
+                * The queue
+                * Asynchronous vs. Synchronous
+                * Blocking vs. nonblocking
+                * AJAX (xmlhttprequest)
+                * JSON
 
-                            connectedCallback () { // Called when added to the document
-                                let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                                this.innerText = Array(10).join(text)
-                            } 
-                        }
-                    ```
-                    
-                    Problem:
-                    What if the attribute is changed after the element is added to the document?
-
-                  
                 </script>
             </section>
-    
-            <section class="noborderimages" data-markdown>
-                <script type="text/template">
-                    ## Custom Elements
 
-                    <span class="lnu source">bart-board.js</span>
-                    ```javascript
-                        class BartBoard extends window.HTMLElement {
-                            constructor() {
-                                super()        
-                            }
-                            connectedCallback () {
-                                this._updateRendering()
-                            }
-                        
-                            static get observedAttributes() {
-                                return ['text'];
-                            }
-                            attributeChangedCallback(name, oldValue, newValue) {
-                                this._updateRendering()
-                            }
-                        
-                            _updateRendering() {
-                                let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                                this.innerText = Array(10).join(text)
-                            }
-                        }
-                    ```
-                    <span class="lnu source">app.html</span>
-                    ```html
-                        <bart-board text='I will not polute the global scope'></bart-board>
-                    ```
-                  
-                </script>
-            </section>
-        
         </section>
 
-        <!-- shadowDom -->
-        <section>
-        
-            <section class="noborderimages" data-markdown>
-                <script type="text/template">
-                    ## Shadow DOM - Behind the DOM
-
-                    <span class="lnu source">&lt;video&gt;&lt;/video&gt;</span>
-
-                    ![](../images/shadow-dom-video.png)
-                </script>
-            </section>
-
-
-            <section class="noborderimages" data-markdown>
-                <script type="text/template">
-                    ## Shadow DOM in a custom element
-
-                    <span class="lnu source">bart-board.js</span>
-                    ```javascript
-                        const template = document.createElement('template')
-                        template.innerHTML = `
-                        <style>
-                            :host {
-                            background:#002418;
-                            ...
-                            }
-                        </style>
-                        <p id='board-text'></p>
-                        `
-                        
-                        class BartBoard extends window.HTMLElement {
-                        constructor () {
-                            super()
-                            this.attachShadow({mode: 'open'})
-                            this.shadowRoot.appendChild(template.content.cloneNode(true))
-                        }
-                        ...
-                        _updateRendering() {
-                            let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                            this.shadowRoot.querySelector('#board-text').innerText = Array(10).join(text)
-                            
-                        }
-                    ```
-                    <span class="lnu source">Best practices from https://developers.google.com/web/fundamentals/web-components/</span>
-                  
-                </script>
-            </section>
-        </section>
-    
 
         </div>
     </div>

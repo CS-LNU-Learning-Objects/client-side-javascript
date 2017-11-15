@@ -1,5 +1,5 @@
 ## Keywords
-DOM, Traversing, Selecting, Manipulating, Templates, Event, How not to - How to, Event delegation, Timers, Event loop
+Event, How not to - How to, Event delegation, Timers, Event loop
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/03-event/index.html)

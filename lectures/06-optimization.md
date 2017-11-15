@@ -2,7 +2,7 @@
 Accessibility, optimization
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/05-optimization/)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/06-optimization/)
 - [Recording](https://youtu.be/2QzavThXjVE) 2017-10-11, 13-14 (Youtube, English)
 - [Recording](https://youtu.be/oAjvR20Scws) 2016-12-13. 13-14 (Youtube, Swedish)
 - <del>[Recording](https://youtu.be/WzEOPm7lXFo) 2016-10-19, 10-11 (Youtube, English)</del>

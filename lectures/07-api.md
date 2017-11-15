@@ -2,7 +2,7 @@
 Web Workers, HTML5 Canvas, Web VR API (Gamepad API). Physical Web (BT-api), Web components, WebRTC, WebGL, Web Assembly
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/06-api/)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/07-api/)
 - [Recording](https://youtu.be/chREl1dcS7U) 2017-10-25, 10-12 (Youtube, English)
 - [Recording](https://youtu.be/vbu2llU2fRY) 2016-12-13, 14-15 (Youtube, Swedish)
 

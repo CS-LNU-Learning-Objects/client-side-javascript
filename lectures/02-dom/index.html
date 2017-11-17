@@ -472,7 +472,7 @@
                     <span class="lnu source">.js</span>
                     ```javascript
                     let template = document.querySelector('#post-template')
-                    let clone = document.importNode(template.content, true)
+                    let clone = template.content.cloneNode(true)
                     document.querySelector('body').appendChild(clone)
                     ```
 
@@ -503,7 +503,7 @@
                     <span class="lnu source">.js</span>
                     ```javascript
 
-                    let clone = template.cloneNode(true)
+                    let clone = template.content.cloneNode(true)
                     document.querySelector('body').appendChild(clone)
                     ```
                 </script>

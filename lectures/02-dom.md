@@ -5,6 +5,7 @@ DOM, Traversing, Selecting, Manipulating, Templates, Custom Elements, Shadow DOM
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/02-dom/index.html)
 - [Recording](https://youtu.be/KVMlTQdOMbw) 2017-11-14, 13-15 (Youtube, Swedish)
 - [Recording](https://youtu.be/vek2dwPV4Lw) 2016-09-21, 13-15 (Youtube, English)
+- [Demo, BartBoard Part 1](https://youtu.be/jBLruMu5pOs)
 
 ### Eloquent JavaScript, 2nd Edition
 

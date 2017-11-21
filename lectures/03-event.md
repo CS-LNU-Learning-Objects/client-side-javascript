@@ -1,11 +1,11 @@
 ## Keywords
-Event, How not to - How to, Event delegation, Timers, Event loop
+Event, How not to - How to, Event delegation, Timers, Custom Elements, Event loop
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/03-event/index.html)
 - [Recording](https://youtu.be/vek2dwPV4Lw) 2016-09-21, 13-15 (Youtube, English)
 
-- [Demo](https://youtu.be/I7HJwo98EQE) BartBoard demo (+1h).
+- [Demo, BartBoard Part 2](#)
 
 ### Eloquent JavaScript, 2nd Edition
 

@@ -10,7 +10,7 @@ This examination is worth 3 credits (3hp).
 
 ## The quiz application
 
-This examination will focus on asynchronous communication agains an external [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) web services through AJAX.
+This examination will focus on asynchronous communication agains an external [RESTful](https://en.wikipedia.org/wiki/Representational_state_transfer) web services through asynchronous calls.
 The backend (server-side code) of this assignment will be given and your job is to write the client-side code.
 
 ## Preperation
@@ -69,11 +69,13 @@ Create a release tag at github to indicate that you are ready for examination. B
 * The client application should also keep track of the total time the user takes to answer all the questions.
 * The user should be able to choose a nickname at the start of the game that will be used in the high-score list.
 * Application should use Web Storage to store a high-score list which presents the five fastest total times (on that specific client) at the end of the game. At least nickname and total time should be present.
+* Your applications shall be able to handle any number of questions as well as different numbers of alternatives to questions.
 
 ## Tips
 Before you start writing code think about:
 * How to present the question the user should answer?
 * How to get the answer from the user and how to send it back to the server?
-* Be sure to tell the server that the POST-request is a "application/json"-request by setting the "Content-type" of the HTTP-header (check up [the XMLHttpRequest object](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and setRequestHeader)
+* Be sure to tell the server that the POST-request is a "application/json"-request by setting the "Content-type" of the HTTP-header (check up [the XMLHttpRequest object](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) and setRequestHeader or [fetch api](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API))
+* Decide if you want to use XMLHttpRequest or the Fetch API
 
 Best of luck!

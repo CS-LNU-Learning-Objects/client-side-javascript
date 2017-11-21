@@ -84,6 +84,7 @@
                   * How not to - How to
                   * Event delegation
                   * Timers
+                  * Synthetic (custom) events
                   * Event loop
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
@@ -110,6 +111,8 @@
                   * Page loaded, DOM Changed ...
                 * Network
                   * Content loaded ...
+                * Synthetic events
+                  * Your custom events
 
                 </script>
             </section>
@@ -317,7 +320,7 @@
                     })
                 }
                 ```
-
+                
                 <span class="lnu source">https://jsfiddle.net/Leitet/j0umya0d/</span>
 
 
@@ -345,8 +348,8 @@
 
                 aTags.forEach( (a, i) => {
                     a.addEventListener('click', event => {
-                        console.log(i); // Correct (0 ... 1 ... 2)
-                        console.log(event.target.textContent); // Correct
+                        console.log(i) // Correct (0 ... 1 ... 2)
+                        console.log(event.target.textContent) // Correct
                     })
                 })
                 ```
@@ -376,7 +379,7 @@
                 let div = document.querySelector('#links')
 
                 div.addEventListener('click', event => {                        
-                        console.log(event.target.textContent); // "The first link"
+                        console.log(event.target.textContent) // "The first link"
 
                         event.currentTarget === div //true
                 })
@@ -447,7 +450,7 @@
                 <span class="lnu source">in my-custom-element.js</span>
                 ```javascript
                 
-                let signupEvent = new window.CustomEvent('signup', { detail: myInput.value  });
+                let signupEvent = new window.CustomEvent('signup', { detail: myInput.value  })
 
                 myCustomElement.dispatchEvent(signupEvent) // This will "trigger"/dispatch the event
                 ```
@@ -512,7 +515,7 @@
                             this.dispatchEvent(event)
                             
                             this._onStopWriting()
-                            return // no use to keep in writing
+                            return // no use to keep on writing
                         }
                         ... // Write on board
                 ```

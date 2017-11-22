@@ -574,7 +574,7 @@
 
                             connectedCallback () { // Called when added to the document
                                 let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                                this.innerText = Array(10).join(text)
+                                this.textContent = Array(10).join(text)
                             } 
                         }
                     ```
@@ -609,7 +609,7 @@
                         
                             _updateRendering() {
                                 let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                                this.innerText = Array(10).join(text)
+                                this.textContent = Array(10).join(text)
                             }
                         }
                     ```
@@ -663,7 +663,7 @@
                         ...
                         _updateRendering() {
                             let text = this.hasAttribute('text') ? this.getAttribute('text') : ''
-                            this.shadowRoot.querySelector('#board-text').innerText = Array(10).join(text)
+                            this.shadowRoot.querySelector('#board-text').textContent = Array(10).join(text)
                             
                         }
                     ```

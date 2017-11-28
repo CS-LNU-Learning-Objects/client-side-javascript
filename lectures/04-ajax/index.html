@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
 
-    <title>Lecture - AJAX and Storage</title>
+    <title>Lecture - Asynchronous programming</title>
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -44,7 +44,7 @@
             <!-- Start -->
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
-                <h1>AJAX & Storage</h1>
+                <h1>Asynchronous programming</h1>
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
                     <img src="../images/lnu-symbol.png" />
@@ -80,17 +80,95 @@
                 <script type="text/template">
                 ## Content
 
+                * JSON
                 * The queue and the event loop
                 * Asynchronous / Synchronous programming
                 * HTTP
                 * Ajax
                   * XMLHttpRequest
-                * WebStorage
+                  * fetch
+                * await/async
                 * Promises
-                * (Generator functions)
-
+                * WebStorage
                 </script>
                 <pre><code></code></pre> <!-- Fix for color coding in md -->
+            </section>
+            <!-- JSON -->
+            <section>
+                
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## JSON
+
+                    * JavaScript Object Notation
+                    * A subset of JavaScript.
+                    * Language independent
+
+                    |         |            |
+                    | :-------------: |:-------------:|
+                    | RFC      | 4627 |
+                    | MIME | application/json     |
+                    | File | .json    |
+                    | Web | http://json.org    |
+                    | Discoverer | Douglas Crockford    |
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## JSON
+
+                    ```json
+                    {
+                        "name": "Bill",
+                        "type": 2,
+                        "alive": false
+                    }
+                    ```
+                    * Datatypes:
+                        * string, number, boolean, null, object or array
+
+                    ```json
+                    [
+                        {"name":"Bill","type":2, "alive": false},
+                        {"name":"Sam","type":5, "alive": false},
+                        {"name":"Jason","type": 1, "alive": true }
+                    ]
+
+                    ```
+
+                    JSON-lint: http://jsonlint.com/
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## JSON
+
+                    * JSON.parse()
+                        * JSON -> Javascript
+                    * JSON.stringify()
+                        * Javascript -> JSON
+
+                    ![](../images/jsonstringify.png)<!-- .element: style="float:right; padding-left:20px" -->
+
+
+                    ```javascript
+                    let obj = {
+                        name: 'Ellen',
+                        age: 25,
+                        city: 'Kalmar'
+                    }
+
+                    console.log(obj)
+                    obj = JSON.stringify(obj)
+                    console.log(obj)
+                    obj = JSON.parse(obj)
+                    console.log(obj)
+                    ```
+                    </script>
+                </section>
             </section>
 
             <!-- Event / Async -->
@@ -104,17 +182,17 @@
                     <br><br><br><br>
                     ```JavaScript
                     function hello(){
-                        console.log("When do I say hello?");
+                        console.log('When do I say hello?')
                     }
 
                     function run(){
-                        setTimeout(hello, 0);
+                        setTimeout(hello, 0)
 
-                        console.log("I run...");
-                        console.log("... very fast.");
+                        console.log('I run...')
+                        console.log('... very fast.')
                     }
 
-                    run();
+                    run()
                     ```
                     [Run using "loupe"](http://latentflip.com/loupe/?code=ZnVuY3Rpb24gaGVsbG8oKSB7CiAgICBjb25zb2xlLmxvZygiV2hlbiBkbyBJIHNheSBoZWxsbz8iKTsKfQoKZnVuY3Rpb24gcnVuKCkgewogICAgc2V0VGltZW91dChoZWxsbywgMjAwMCk7CgogICAgY29uc29sZS5sb2coIkkgcnVuLi4uIik7CiAgICBjb25zb2xlLmxvZygiLi4uIHZlcnkgZmFzdC4iKTsKfQoKcnVuKCk7!!!PGJ1dHRvbj5DbGljayBtZSE8L2J1dHRvbj4%3D)
                     </script>
@@ -128,18 +206,18 @@
 
                     ```JavaScript
                     function hello(){
-                        console.log("When do I say hello?");
+                        console.log('When do I say hello?')
                     }
 
                     function run(){
-                        setTimeout(hello, 0);
+                        setTimeout(hello, 0)
 
-                        console.log("I run...");
-                        alert("...");
-                        console.log("... very fast.");
+                        console.log('I run...');
+                        alert('...')
+                        console.log('... very fast.')
                     }
 
-                    run();
+                    run()
                     ```
                     https://jsfiddle.net/Leitet/dvktvphm/
 
@@ -270,13 +348,13 @@
                     Do not do this
 
                     ```
-                    let req = new XMLHttpRequest();
+                    let req = new window.XMLHttpRequest()
 
-                    req.open("GET", "data.json", false);
+                    req.open('GET', 'data.json', false)
 
-                    req.send();
+                    req.send()
 
-                    console.log(req.responseText);
+                    console.log(req.responseText)
                     ```
 
                     ![](https://docs.google.com/drawings/d/1vIpcF6jlqqpMi_uQ_XQjW0_LOR9INSFdWMKtrM4DP2s/pub?w=1476&h=555)
@@ -288,15 +366,15 @@
                     ## Asynchronous request
 
                     ```JavaScript
-                    let req = new XMLHttpRequest();
+                    let req = new window.XMLHttpRequest()
 
-                    req.addEventListener("load", function(){
+                    req.addEventListener('load', function(){
                         // function to run when response from server
-                        console.log(req.responseText);
+                        console.log(req.responseText)
                     });
 
-                    req.open("GET", "data.json");
-                    req.send();
+                    req.open('GET', 'data.json');
+                    req.send()
 
                     // Do a lot of other stuff
                     ```
@@ -319,247 +397,187 @@
                       * The term *AJAX* was made up by Jesse James Garrett through the article *[Ajax: A New Approach to Web Applications](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/)*
                     * 2006
                       * Microsoft adds the XMLHttpRequest-objeect in the same way as other browsers (IE7)
+                    * ~ 2015
+                      * Support for **fetch** introduced
 
                     </script>
                 </section>
 
+
+               
+            </section>
+
+            <section>
+                <!-- TV-shows example -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
-                    ## CORS
-                    Cross-Origin Resource Sharing
+                    ## TV-shows
 
-                    Problem
-                    * Scripts from domain-a.com can only make XMLHttpRequests to domain-a.com
-                      * ![](../images/corserror.png)
-
-                    Solution
-                    * Use your server as a proxy
-                    * Implement CORS headers on the server to call
-
+                    ![](https://docs.google.com/drawings/d/e/2PACX-1vQo489j-wWTvnoS49hIXN9dLlTUEg9B93UFYSNkm5-YxUI1Ta2ehkcHMdKNgR6AZdsyVuN23YtygS3J/pub?w=730&h=454)
 
                     </script>
                 </section>
 
+                <!-- TV-shows example -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
-                    ![](https://docs.google.com/drawings/d/1cqR9PDV3ycg5swbVvXmLsXfS_jiar5RmRbDNyfM8QXg/pub?w=1440&h=1080)
+                    ## TV-shows
+                    
+                    ```JavaScript
+                    class SearchShow extends window.HTMLElement {
+                    ...
+                    async getShow (id) {
+                        let show = await window.fetch(`http://tv-api.se/shows/${id}`)
+                        return show.json()
+                    }
 
+                    async searchUpdate (str) {
+                        let res = await window.fetch(`http://tv-api.se/shows/?q=${str}`)
+                    
+                        res = await res.json() // { searchString: 'prison', result: [24]}
+                    
+                        this.shows = await this.getShow(res.result[0]) // Got Prison Break
+                    }
+
+                    
+                    ```
+                    <span class="lnu source">Problem?</span>
+                    </script>
+                </section>
+
+                <!-- TV-shows example -->
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## TV-shows (get more than one)
+                    
+                    ```JavaScript
+                    class SearchShow extends window.HTMLElement {
+                    ...
+                    async searchUpdate (str) {
+                        let res = await window.fetch(`http://tv-api.se/shows/?q=${str}`)
+                    
+                        res = await res.json() // { searchString: "break", result: [24, 35]}
+                    
+                        this.shows = [] // Empty current result
+                        
+                        for (let id of res.result) {
+                          this.shows.push(await this.getShow(id))
+                        }
+                      }
+                    ```
+                    <span class="lnu source">Problem?</span>
+                    
+                    </script>
+                </section>
+
+                <!-- TV-shows example -->
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## TV-shows (in parallel)
+                    
+                    ```JavaScript
+                    class SearchShow extends window.HTMLElement {
+                    ...
+                    async searchUpdate (str) {
+                        let res = await window.fetch(`http://tv-api.se/shows/?q=${str}`)
+                    
+                        res = await res.json() // { searchString: "break", result: [24, 35]}
+                    
+                        let showPromises = []
+                        res.result.forEach(id => {
+                          showPromises.push(this.getShow(id))
+                        })
+                        this.shows = []
+                        this.shows = await Promise.all(showPromises)
+                    }
+                    ```           
                     </script>
                 </section>
 
 
+                <!-- TV-shows example -->
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## TV-shows
+                    
+                    ```JavaScript
+                    class SearchShow extends window.HTMLElement {
+                    ...
+                    connectedCallback () {
+                        this._searchButton.addEventListener('click', event => {
+                          this.searchUpdate(this._input.value).then(() => this._updateRendering())
+                        })
+                    }
+                    _updateRendering () {
+                        this._ul.innerHTML = ''
+                        this.shows.forEach(show => {
+                        let li = document.createElement('li')
+                        li.textContent = `${show.name} ${show.year}`
+                        this._ul.appendChild(li)
+                        })
+                    }
+                    ```           
+                    </script>
+                </section>
 
+                 <!-- fetch -->
                  <section class="noborderimages" data-markdown>
                     <script type="text/template">
-                    ## Callback pattern
+                    ## fetch
 
+                    <span class="lnu source">Without async/await</span>
                     ```JavaScript
-                    module.exports.request = function(config, callback) {
-                        let req = new XMLHttpRequest();
-
-                        req.addEventListener("load", function() {
-
-                            if (req.status >= 400) {
-                                callback(req.status);
-                            }
-
-                            callback(null, req.responseText);
-                        });
-
-                        req.open(config.method, config.url);
-                        req.send();
-                    }
-                    ```
-
-                    ```JavaScript
-                    let ajax = require("./ajax");
-
-                    ajax.request({method: "get", url: "data.json"}, function(error, response){
-
-                        if(error){
-                            throw new Error("Network error " + error);
-                        }
-
-                        console.log(response);
-                    });
-
-                    ```
-                    </script>
-                </section>
-
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## "Callback hell", AKA "Temple of DOOM"
-
-                    https://gist.github.com/Leitet/b8a08c0b2c83dc40875f
-
-                    ```JavaScript
-                    let ajax = require("./ajax");
-                    let url = "first.json";
-
-                    ajax.request({method: "get", url: url}, function(error, response){
-
-                        url = doSomethingToGetNewURL(response);
-                        ajax.request({method: "get", url: url}, function(error, response){
-
-                            url = doSomethingToGetNewURL(response);
-                            ajax.request({method: "get", url: url}, function(error, response){
-
-                                url = doSomethingToGetNewURL(response);
-                                ajax.request({method: "get", url: url}, function(error, response){
-                                    doSomethingWithTheFinalData(response);
-
-                                });
-                            });
-                        });
-                    });
-                    ```
-                    </script>
-                </section>
-
-                <!-- Promises -->
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## Promises
-
-                    ```JavaScript
-                    module.exports.request = function(config) {
-                        return new Promise( function (resolve, reject){
-                          let req = new XMLHttpRequest();
-
-                          req.addEventListener("load", function() {
-
-                              if (req.status >= 400) {
-                                  reject(req.status);
-                              }
-                              resolve(req.responseText);
-                          });
-
-                          req.open(config.method, config.url);
-                          req.send();
-                        }); // new Promise end
-                    };
-                    ```
-
-                    ```JavaScript
-                    let ajax = require("./ajax");
-
-                    ajax.request({method: "get", url: "data.json"})
-                      .then( data => {
-                        console.log(data);
+                    let data = {
+                        id: 54322575,
+                        name: 'Johan'
+                      }
+                      
+                      window.fetch('http://url-to-fetch.at/path', {
+                        method: 'POST',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                      }).then(res => {
+                        // Process the response here
+                      }).catch(error => {
+                        // Handle errors here
                       })
-                      .catch( error => {
-                        throw new Error("Network error " + error);
-                      });
-                    });
                     ```
-                  </script>
+                    </script>
                 </section>
 
-                <!-- fetch -->
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                     ## fetch
 
+                    <span class="lnu source">In an async function:</span>
+                    ```JavaScript
+                    data = {
+                        id: 54322575,
+                        name : 'Johan'
+                    }
                     
-
-                    </script>
-                </section>
-
-
-                <!-- Async/Await -->
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## Async / Await
-
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/568g8hxJJp4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
-
-                    </script>
-                </section>
-
-
-            </section>
-
-
-            <!-- JSON -->
-            <section>
-
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## JSON
-
-                    * JavaScript Object Notation
-                    * A subset of JavaScript.
-                    * Language independent
-
-                    |         |            |
-                    | :-------------: |:-------------:|
-                    | RFC      | 4627 |
-                    | MIME | application/json     |
-                    | File | .json    |
-                    | Web | http://json.org    |
-                    | Discoverer | Douglas Crockford    |
-
-                    </script>
-                </section>
-
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                    ## JSON
-
-                    ```json
-                    {
-                        "name": "Bill",
-                        "type": 2,
-                        "alive": false
-                    }
+                    let res = await window.fetch("http://url-to-fetch.at/path", {
+                        method: "POST",
+                        headers: {
+                          'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
                     ```
-                    * Datatypes:
-                      * string, number, boolean, null, object or array
-
-                    ```json
-                    [
-                      {"name":"Bill","type":2, "alive": false},
-                      {"name":"Sam","type":5, "alive": false},
-                      {"name":"Jason","type": 1, "alive": true }
-                    ]
-
-                    ```
-
-                    JSON-lint: http://jsonlint.com/
+                    Capture errors in a try/catch
                     </script>
                 </section>
 
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
-                    ## JSON
-
-                    * JSON.parse()
-                      * JSON -> Javascript
-                    * JSON.stringify()
-                      * Javascript -> JSON
-
-                    ![](../images/jsonstringify.png)<!-- .element: style="float:right; padding-left:20px" -->
-
-
-                    ```javascript
-                    let obj = {
-                        name: "Ellen",
-                        age: 25,
-                        city: "Kalmar"
-                    }
-
-                    console.log(obj);
-                    obj = JSON.stringify(obj);
-                    console.log(obj);
-                    obj = JSON.parse(obj);
-                    console.log(obj);
-                    ```
-
-
-
+                    ## 
+                    ![](https://i.imgflip.com/2048sd.jpg)
                     </script>
                 </section>
+
+                
             </section>
 
             <!-- Forms and Fields -->
@@ -578,7 +596,32 @@
                     </script>
             </section>
 
+            <!-- CORS -->
+            <section>
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ## CORS
+                    Cross-Origin Resource Sharing
 
+                    Problem
+                    * Scripts from domain-a.com can only make requests to domain-a.com
+                    * ![](../images/corserror.png)
+
+                    Solution
+                    * Use your server as a proxy
+                    * Implement CORS headers on the server to call
+
+
+                    </script>
+                </section>
+
+                <section class="noborderimages" data-markdown>
+                    <script type="text/template">
+                    ![](https://docs.google.com/drawings/d/1cqR9PDV3ycg5swbVvXmLsXfS_jiar5RmRbDNyfM8QXg/pub?w=1440&h=1080)
+
+                    </script>
+                </section>
+            </section>
 
             <!-- WebStorage -->
             <section>
@@ -617,17 +660,17 @@
 
                     ```JavaScript
                     function populateStorage() {
-                          localStorage.setItem('bgcolor', document.getElementById('bgcolor').value);
-                          localStorage.setItem('font', document.getElementById('font').value);
-                          localStorage.setItem('image', document.getElementById('image').value);
+                          localStorage.setItem('bgcolor', document.getElementById('bgcolor').value)
+                          localStorage.setItem('font', document.getElementById('font').value)
+                          localStorage.setItem('image', document.getElementById('image').value)
 
-                          setStyles();
+                          setStyles()
                     }
 
                     function setStyles() {
-                          let currentColor = localStorage.getItem('bgcolor');
-                          let currentFont = localStorage.getItem('font');
-                          let currentImage = localStorage.getItem('image');
+                          let currentColor = localStorage.getItem('bgcolor')
+                          let currentFont = localStorage.getItem('font')
+                          let currentImage = localStorage.getItem('image')
                           ...
                     ```
 
@@ -649,11 +692,11 @@
                     }
 
 
-                    localStorage.setItem("style", JSON.stringify(style));
+                    localStorage.setItem('style', JSON.stringify(style))
 
                     ...
 
-                    JSON.parse(localStorage.getItem("style"));
+                    JSON.parse(localStorage.getItem('style'))
                     ```
 
                     </script>

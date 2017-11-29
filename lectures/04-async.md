@@ -1,11 +1,10 @@
 ## Keywords
-AJAX, Webstorage, cookies
+Asynchronous programming, JSON, Ajax, await/async, promises, Webstorage, cookies
 
 ## Resources
-- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/04-ajax/index.html)
+- [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/04-async/index.html)
+- [Recording](https://youtu.be/0UriceMVB7k) 20167-11-28, 13-15 (Youtube, Swedish)
 - [Recording](https://youtu.be/UlrnsPBJiW8) 2017-09-27, 10-12 (Youtube, English)
-- [Recording](https://youtu.be/RRTXex4_8Cg) 2016-09-29, 10-12 (Youtube, English)
-- [Recording](https://youtu.be/F_p5Mfh6HOg) 2016-11-22, 13-15 (Youtube, Swedish)
 
 ### Eloquent JavaScript, 2nd Edition
 

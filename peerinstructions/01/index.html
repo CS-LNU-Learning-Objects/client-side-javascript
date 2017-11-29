@@ -80,26 +80,6 @@
                     </script>
             </section>
 
-            <section data-markdown>
-                  <script type="text/template">
-                    ### What is wrong with the following code?
-                    <br />
-                    ```javascript
-                    var lis = document.querySelectorAll('li')
-
-                    lis.forEach(function(li){
-                      li.textContent = 'Some text'
-                    })
-                    ```
-
-                    <br />
-                    * List elements can not have textnodes.
-                    * "lis" is not an Array, but treated as one
-                    * The function does not have a name
-                    * querySelectorAll should be querySelector
-                  </script>
-            </section>
-
 
             <section data-markdown>
                   <script type="text/template">

@@ -12,7 +12,7 @@ Asynchronous programming, JSON, Ajax, await/async, promises, Webstorage, cookies
 - [18. Forms and form fields](http://eloquentjavascript.net/18_forms.html)
 
 ### Mandatory Resources
-1. Watch: [What the hell is the event loop anyway?](https://youtu.be/8aGhZQkoFbQ)
+1. Watch: [What the heck is the event loop anyway?](https://youtu.be/8aGhZQkoFbQ)
 2. Read: [Promises (Skip "Bonus round: Promises and Generators")](http://www.html5rocks.com/en/tutorials/es6/promises/)
 3. Watch: [Autocomplete](https://youtu.be/7nkTTeDhKyo)
 4. Watch: [Autocomplete + Promises extended demo](https://youtu.be/K_elRJIJPqw)

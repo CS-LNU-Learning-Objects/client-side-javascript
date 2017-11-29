@@ -1,5 +1,5 @@
 ## Keywords
-Asynchronous programming, JSON, Ajax, await/async, promises, Webstorage, cookies
+Asynchronous programming, JSON, Ajax, await/async, promises, Webstorage, cookies 
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/04-async/index.html)

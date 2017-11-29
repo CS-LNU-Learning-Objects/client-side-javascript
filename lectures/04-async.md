@@ -16,5 +16,5 @@ Asynchronous programming, JSON, Ajax, await/async, promises, Webstorage, cookies
 2. Read: [Promises (Skip "Bonus round: Promises and Generators")](http://www.html5rocks.com/en/tutorials/es6/promises/)
 3. Watch: [Autocomplete](https://youtu.be/7nkTTeDhKyo)
 4. Watch: [Autocomplete + Promises extended demo](https://youtu.be/K_elRJIJPqw)
-5. Watch: [TO COME: TeamSelector New Demo 2017] (#)
+5. Watch: [TO COME: TeamSelector New Demo 2017](#)
 6. Watch: [Fun fun functions - Await Async](https://www.youtube.com/watch?v=568g8hxJJp4)

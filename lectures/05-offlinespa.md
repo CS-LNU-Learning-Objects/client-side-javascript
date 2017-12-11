@@ -8,7 +8,6 @@ Single Page Applications, History API, Websockets, Offline first, Application ca
 - <del>[Recording](https://youtu.be/od-CxePLoeY) 2016-10-13, 13-15 (Youtube, English)</del>
 
 
-
 ## Mandatory resources
 1. Watch: [Three Keys to Successful Single Page Web Applications](https://youtu.be/46Bu9ms9mBg)
 2. Watch: [Christine Spang - WebSockets from the Wire Up - PyCon 2015](https://youtu.be/u5QT3luWx7w)

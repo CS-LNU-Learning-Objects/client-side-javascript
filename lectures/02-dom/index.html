@@ -223,14 +223,18 @@
                 ## NodeList
                 NodeList.prototype !== Array.prototype
 
-                * Extending the NodeList (anti-pattern)
-                  * NodeList.prototype.forEach = Array.prototype.forEach
-                * Borrowing methods
-                  * Array.prototype.forEach.call(nodes, function(node){ ... })
-                  * Array.prototype.forEach.call(nodes, node => { ... })
-                * Transform NodeList to Array
-                  * nodes = Array.prototype.slice.call(nodes)
-
+                forEach implemented in modern browsers
+                ```
+                    pTagsNodeList.forEach(element => { 
+                        // Do something
+                    })
+                ```
+            
+                Convert to an array to use with other array-methods
+                ```
+                    let pTagsArray = Array.from(pTagsNodeList)
+                        
+                ```
 	            </script>
 	        </section>
 		</section>

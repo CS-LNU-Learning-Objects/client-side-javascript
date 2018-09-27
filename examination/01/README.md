@@ -35,11 +35,11 @@ Any attempt to plagiarism or other way of cheating will be reported to the unive
 ## About the assignment
 You should create an client application in which the user can answer, by the server given, quiz-questions. The user must do this in a certain time. If the user gives the correct answer, the application will take the user to the next question. If the user give the wrong answer or didn´t in time the quiz is over.
 
-You are responsible for the presentation of the questions, the handling of the client application logic and the user interface. The user shouldn't have any problem to understand the UI. Keep it simple, keep it beautiful.
+You are responsible for the presentation of the questions (retrived from the server), the handling of the client application logic and the user interface. The user shouldn't have any problem to understand the UI. Keep it simple, keep it beautiful.
 
 At the start of the game the user should be able to write a nickname she/he wants in the quiz game. The game must have a timer that gives the user a maximum of 20 seconds to answer each question. If the user doesn´t answer during the time or the user answer wrong it is game over and the user should be able to start the game over.
 
-If the user answer all of the questions with correct answers the game should record the users total time and present this in a high-score list with the five fastest times. The high-score will be saved in the browsers Web Storage.
+If the user answer all of the questions correctly the game should record the users total time and present this in a high-score list with the five fastest times. The high-score will be saved in the browsers Web Storage.
 
 ### The questions and answers
 The questions will be public to the client application through a RESTful Web API. The first question (starting point of the application) is at the URL:
@@ -54,12 +54,12 @@ https://github.com/thajo/AjaxAssignment
 
 The response of the API will tell you what kind of question you should show to the user and where to send the answers. In other word, you have to analyze the response from the server to know how to display the questions and how to send new requests for answering the questions. Hyperlink is provided by the server response in a RESTful way. The server responses will also give clues about what HTTP-methods to use and how to send the answers back.
 
-The server will put out two different types of questions. Simple text questions and questions with alternatives where the user should answer with the right key "alt1", "alt2" etc. You can watch the server responses and decide what is what.
+The server will put out two different types of questions. Simple text questions and questions with alternatives where the user should answer with the right key "alt1", "alt2" etc. You can watch the server responses and decide what is what. Questions with alternatives should be presented with html radio buttons. The user should not need to write anything on thoose questions. 
 
 The last question answered will not return any new link to a new question and that means that the quiz is over.
 
 ### Finishing up
-Create a release tag at github to indicate that you are ready for examination. Book a time for oral exam.
+Create a *release* tag at github to indicate that you are ready for examination. Book a time for oral exam.
 
 ## Requirements
 * The client application must be written in vanilla javascript, no libraries like jQuery.

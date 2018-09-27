@@ -3,10 +3,11 @@ The Browser, rendering engine, browser enginge, javascript engine, javascript an
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/01-browser/index.html#/)
+- [Recording](https://youtu.be/8k0-jp7pP-Y) 2018-09-27 10-12 (Youtube, English)
 - [Recording](https://youtu.be/njOAxwXNgyc) 2017-11-07 13-15 (Youtube, Swedish)
-- [Recording](https://youtu.be/TRCwdcgD4kk) 2016-09-21 10-12 (Youtube, English)
 
-### Eloquent JavaScript, 2nd Edition
+
+### Eloquent JavaScript, 3rd Edition
 
 - [12. JavaScript and the browser](http://eloquentjavascript.net/12_browser.html)
     - [HTML and JavaScript](http://eloquentjavascript.net/12_browser.html#h_x9VDt2sTZZ)

@@ -11,7 +11,7 @@ DOM, Traversing, Selecting, Manipulating, Templates, Custom Elements, Shadow DOM
 
 ### Eloquent JavaScript, 3rd Edition
 
-- [13. Document Object Model](http://eloquentjavascript.net/13_dom.html)
+- [14. Document Object Model](http://eloquentjavascript.net/14_dom.html)
 
 ## External resources
 * [http://perfectionkills.com/whats-wrong-with-extending-the-dom/](http://perfectionkills.com/whats-wrong-with-extending-the-dom/)

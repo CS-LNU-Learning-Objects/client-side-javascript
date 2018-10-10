@@ -9,6 +9,9 @@ After performing this assignment you will fulfill the three goals described in t
 
 This examination is worth 3.5 credits (3.5hp).
 
+##Notice
+Any attempt to plagiarism or other way of cheating will be reported to the university discipline board.
+
 ## Preperation
 1. Do the excercises at A and B level. (at least)
 2. Read the chapters in the book for this part.
@@ -51,8 +54,11 @@ The following three applications should at least be included in the desktop appl
 * One, by you, designed and decided application
 
 ### Non functional requirements PWD:
+* A complete git commit history should be present for assessment. For this assignment somewhere between 30 and 200 commits is normal
+* The code standard [standard.js](https://standardjs.com/) should be followed. (`npm start` will show errors if you are not complying)
+* All Exported functions, classes and types should be commented. Perferably using JSDoc. 
 * The application shall be visually appealing
-* The code shall be organized in appropriate modules
+* The code shall be organized in appropriate modules, at least four (4).
 
 ## The memory game application
 See [exercise/memory/README.md](https://github.com/CS-LNU-Learning-Objects/exercise-memory-game/blob/master/README.md) for a description of this application.

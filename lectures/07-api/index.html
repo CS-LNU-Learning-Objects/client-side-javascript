@@ -123,7 +123,7 @@
               ```
 
               ```javascript
-              let worker = new Worker('worker.js')
+              let worker = new window.Worker('worker.js')
               let dataContainer = document.querySelector('#pn')
 
               worker.addEventListener('message', e => {
@@ -165,7 +165,7 @@
 
         <section class="noborderimages" data-markdown>
             <script type="text/template">
-              ##Web VR API
+              ##WebXR API
 
               ![](images/webvr.png)
 
@@ -213,6 +213,23 @@
               </script>
           </section>
 
+          <section class="noborderimages" data-markdown>
+            <script type="text/template">
+              ##WebNFC API
+
+              https://w3c.github.io/web-nfc/
+
+            </script>
+        </section>
+
+          <section class="noborderimages" data-markdown>
+            <script type="text/template">
+              ##WebUSB API
+
+              https://wicg.github.io/webusb/
+
+            </script>
+        </section>
 
         </section>
         <!-- Web Components -->
@@ -220,73 +237,17 @@
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
                       ##Web components
+                      ![Webcomponents logotype](images/components.png)
+                      
                       * Custom elements
-                      * HTML Imports
                       * Templates
                       * Shadow DOM
+                      * ECMA Script Modules
+                      
 
                     </script>
                 </section>
 
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                      ##Custom Elements (Web Components)
-
-                      http://w3c.github.io/webcomponents/spec/custom/
-                    </script>
-                </section>
-
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                      ##HTML Imports (Web Components)
-
-                      http://w3c.github.io/webcomponents/spec/imports/
-
-                      http://webcomponents.org/articles/introduction-to-html-imports/
-                    </script>
-                </section>
-
-                <section class="noborderimages" data-markdown>
-                    <script type="text/template">
-                      ##Templates (Web Components)
-
-                    </script>
-                </section>
-
-                <section class="noborderimages" data-markdown>
-
-                    <script type="text/template">
-                      ##Shadow DOM API (Web Components)
-                      ```html
-                      <template id="wc-template">
-                        <style>
-                          p { color: orange; }
-                        </style>
-                        <p>Hello Component!</p>
-                      </template>
-                      ```
-
-                      ```javascript
-                      class MyWebComponent extends HTMLElement {
-                        constructor() {
-                          super()
-
-                          let shadowRoot = this.attachShadow({mode: 'open'})
-                          const t = document.querySelector('#wc-template')
-                          const instance = t.content.cloneNode(true)
-                          shadowRoot.appendChild(instance)
-                        }
-                      }
-
-                      customElements.define('my-webcomponent', MyWebComponent)
-                      ```
-
-                      ```html
-                      ...
-                      <my-webcomponent></my-webcomponent>
-                      ```
-                    </script>
-                </section>
 
                 <section class="noborderimages" data-markdown>
                     <script type="text/template">
@@ -320,6 +281,8 @@
                     > WebGL is a web technology that brings hardware-accelerated 3D graphics to the browser without installing additional software.
 
                     https://paperplanes.world/
+
+                    * WebGL 2.0 based on Open GL ES3.0
                   </script>
               </section>
 
@@ -330,6 +293,8 @@
                     > WebAssembly or wasm is a new portable, size- and load-time-efficient format suitable for compilation to the web.
 
                     https://github.com/webassembly/
+
+                    https://webassembly.org/demo/Tanks/
                   </script>
               </section>
 
@@ -344,8 +309,24 @@
                   </script>
               </section>
 
+              <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                  ##WebShare API
+
+                  https://wicg.github.io/web-share/
+
+                </script>
+            </section>
 
 
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                  ##WebShare Target API
+
+                  Make your PWA (progressive web application) the target of a share
+
+                </script>
+            </section>
 
               <section class="noborderimages" data-markdown>
                   <script type="text/template">

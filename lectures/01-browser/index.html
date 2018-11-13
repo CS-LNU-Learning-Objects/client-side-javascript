@@ -485,6 +485,59 @@
             
             
         </section>
+        <section class="noborderimages" data-markdown>
+            <script type="text/template">
+                #default export
+                
+                <p clasS="lnu source">app.js</p>
+                ```js
+                    import MyClass from './MyClass.js'
+                    
+                    new MyClass()
+                ```
+
+                <p clasS="lnu source">MyClass.js</p>
+                ```js
+                    export default class MyClass {
+                        constructor(){
+
+                        }
+                    }
+                ```
+            </script>
+        </section>
+            <section class="noborderimages" data-markdown>
+                <script type="text/template">
+                    #In this course
+                    
+                    <p clasS="lnu source">app.js</p>
+                    <pre><code data-trim contenteditable>
+                    &lt;head&gt; 
+                      &lt;script type="module" src="js/app.js"&gt;&lt;/script&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                      ... 
+                      &lt;script nomodule src="build.js"&gt;&lt;/script&gt;
+                    &lt;/body&gt;
+                    </pre></code>
+
+                    <p clasS="lnu source">app.js</p>
+                    ```js
+                        import MyClass from './MyClass.js'
+                        
+                        new MyClass()
+                    ```
+    
+                    <p clasS="lnu source">MyClass.js</p>
+                    ```js
+                        export default class MyClass {
+                            constructor(){
+    
+                            }
+                        }
+                    ```
+                </script>
+        </section>
         </section>
 
             <!-- Developer tools -->

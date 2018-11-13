@@ -18,6 +18,8 @@ The Browser, rendering engine, browser enginge, javascript engine, javascript an
 * Browser components
   * [Grosskurth, A., & Godfrey, M. (2005). A reference architecture for Web browsers.](http://grosskurth.ca/papers/browser-refarch.pdf)
   * [Nordic.js 2015 - A trip to the zoo](https://youtu.be/1kAkGWJZ6Zo)
+* Modules
+  * [ECMAScript Modules: Past, Present, and Future](https://youtu.be/3U3Av7tM7_U)
 * Developer tools
   * [Google Chrome Developer Tools Crash Course](https://youtu.be/x4q86IjJFag)
   * [Using the Chrome Console](https://developer.chrome.com/devtools/docs/console)

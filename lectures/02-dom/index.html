@@ -176,9 +176,9 @@
 
                     |         | Parameter (ex)        | Returns  |
                     | :-------------: |:-------------:| :-----:|
-                    | getElementById      | id    |  Node-element|
-                    | getElementsByTagName| tag      |   Node-list|
-                    | getElementsByClassName| class  |   Node-list|
+                    | getElementById      | id    |  Element|
+                    | getElementsByTagName| tag      |   HTMLCollection|
+                    | getElementsByClassName| class  |   HTMLCollection|
 
 
 
@@ -203,7 +203,7 @@
 
                 | | Returns       |
                 |:----------------- |:-------------:|
-                | querySelector     |  Node-element |
+                | querySelector     |  Element |
                 | querySelectorAll  |   Node-list   |
 
 
@@ -220,10 +220,10 @@
 
 	        <section class="noborderimages" data-markdown>
                 <script type="text/template">
-                ## NodeList
+                ## NodeList and HTMLCollection
                 NodeList.prototype !== Array.prototype
 
-                forEach implemented in modern browsers
+                forEach implemented in modern browsers (not on HTMLCollection)
                 ```
                     pTagsNodeList.forEach(element => { 
                         // Do something
@@ -380,8 +380,8 @@
                     ```javascript
                     ...
 
-                    movingElement.style.left = x + 'px'
-                    movingElement.style.top = y + 'px'
+                    movingElement.style.left = `${x}px`
+                    movingElement.style.top = `${y}px`
 
                     ...
                     ```
@@ -491,7 +491,7 @@
                     <span class="lnu source">.js</span>
                     ```javascript
                     const template = document.createElement('template')
-                    template.innerHTML = `
+                    template.innerHTML = /*html*/`
                         <div class='post'>
                             <ul>
                                 <li class='active'>
@@ -648,7 +648,7 @@
                     <span class="lnu source">bart-board.js</span>
                     ```javascript
                         const template = document.createElement('template')
-                        template.innerHTML = `
+                        template.innerHTML = /*html*/`
                         <style>
                             :host {
                             background:#002418;

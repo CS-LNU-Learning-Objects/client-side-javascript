@@ -509,15 +509,16 @@
                     
                     _onWrite (event) {
                         this._intervalID = setInterval(() => {
-                        if (this._p.offsetHeight >= this.offsetHeight) {
-                            let event = new window.CustomEvent('filled', { detail: {} })
+                            if (this._p.offsetHeight >= this.offsetHeight) {
+                                let event = new window.CustomEvent('filled', { detail: {} })
 
-                            this.dispatchEvent(event)
-                            
-                            this._onStopWriting()
-                            return // no use to keep on writing
-                        }
+                                this.dispatchEvent(event)
+                                
+                                this._onStopWriting()
+                                return // no use to keep on writing
+                            }
                         ... // Write on board
+                        }, 200)
                 ```
                 <span class="lnu source">app.js</span>
                 ```javascript

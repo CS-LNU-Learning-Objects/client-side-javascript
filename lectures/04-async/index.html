@@ -371,9 +371,9 @@
                     req.addEventListener('load', function(){
                         // function to run when response from server
                         console.log(req.responseText)
-                    });
+                    })
 
-                    req.open('GET', 'data.json');
+                    req.open('GET', 'data.json')
                     req.send()
 
                     // Do a lot of other stuff
@@ -651,17 +651,17 @@
 
                     ```JavaScript
                     function populateStorage() {
-                          localStorage.setItem('bgcolor', document.getElementById('bgcolor').value)
-                          localStorage.setItem('font', document.getElementById('font').value)
-                          localStorage.setItem('image', document.getElementById('image').value)
+                          window.localStorage.setItem('bgcolor', document.getElementById('bgcolor').value)
+                          window.localStorage.setItem('font', document.getElementById('font').value)
+                          window.localStorage.setItem('image', document.getElementById('image').value)
 
                           setStyles()
                     }
 
                     function setStyles() {
-                          let currentColor = localStorage.getItem('bgcolor')
-                          let currentFont = localStorage.getItem('font')
-                          let currentImage = localStorage.getItem('image')
+                          let currentColor = window.localStorage.getItem('bgcolor')
+                          let currentFont = window.localStorage.getItem('font')
+                          let currentImage = window.localStorage.getItem('image')
                           ...
                     ```
 
@@ -683,11 +683,11 @@
                     }
 
 
-                    localStorage.setItem('style', JSON.stringify(style))
+                    window.localStorage.setItem('style', JSON.stringify(style))
 
                     ...
 
-                    JSON.parse(localStorage.getItem('style'))
+                    JSON.parse(window.localStorage.getItem('style'))
                     ```
 
                     </script>

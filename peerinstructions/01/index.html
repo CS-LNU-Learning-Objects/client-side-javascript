@@ -44,7 +44,7 @@
             <section class="center" data-state="lnu-intro">
                 <h3>Client-based Web Programming</h3>
                 <h2>Peer-Instruction 1</h2>
-                <h2>http://pingo.upb.de/458207</h2>
+                <h2>https://pingo.coactum.de/365791</h2>
 
                 <div class="lnu-footer">
                     <img src="../images/lnu-logotype.png" />
@@ -165,7 +165,7 @@
                     What is wrong with this code:
 
                     ```javascript
-                    var xhr = new XMLHttpRequest()
+                    var xhr = new window.XMLHttpRequest()
                     xhr.open('GET', 'http://whatever.com')
                     xhr.send()
 
@@ -186,7 +186,7 @@
                     What is the problems in this case
 
                     ```javascript
-                    var xhr = new XMLHttpRequest()
+                    var xhr = new window.XMLHttpRequest()
                     xhr.addEventListener('load', ajax);
                     xhr.open('GET', 'http://whatever.com')
                     xhr.send()

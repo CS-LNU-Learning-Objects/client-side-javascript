@@ -3,7 +3,7 @@ The Browser, rendering engine, browser enginge, javascript engine, javascript an
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/01-browser/index.html#/)
-- [Recording](https://youtu.be/-Tqq6k06f40) 2018-11-16 13-15 (Youtube, Swedish)
+- [Recording](https://youtu.be/na3eYE8j7hI) 2019-11-12 13-15 (Youtube, Swedish)
 - [Recording](https://youtu.be/8k0-jp7pP-Y) 2018-09-27 10-12 (Youtube, English)
 
 

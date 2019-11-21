@@ -3,7 +3,7 @@ DOM, Traversing, Selecting, Manipulating, Templates, Custom Elements, Shadow DOM
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/02-dom/index.html)
-- [Recording](https://youtu.be/rWLVSkxNfQ0) 2018-11-21, 13-15 (Youtube, Swedish)
+- [Recording](https://youtu.be/svcHK7ypS_A) 2019-11-19, 13-15 (Youtube, Swedish)
 - [Recording](https://youtu.be/cojikH2AoTI) 2018-09-27, 13-15 (Youtube, English)
 
 - [Demo, BartBoard Part 1 (DOM, CustomElements)](https://youtu.be/jBLruMu5pOs)

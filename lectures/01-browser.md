@@ -1,5 +1,5 @@
 ## Keywords
-The Browser, rendering engine, browser enginge, javascript engine, javascript and the browser, the script tag, developer tools, sandboxing, polution, browserify
+The Browser, rendering engine, browser enginge, javascript engine, javascript and the browser, the script tag, developer tools, sandboxing, polution
 
 ## Resources
 - [HTML-presentation](https://rawgit.com/CS-LNU-Learning-Objects/client-side-javascript/master/lectures/01-browser/index.html#/)
